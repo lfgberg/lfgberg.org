@@ -5,7 +5,7 @@
 # Theme
 theme = "blowfish"
 
-# baseURL = "https://your_domain.com/"
+baseURL = "https://lfgberg.org/"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
