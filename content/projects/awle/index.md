@@ -9,4 +9,4 @@ The AWLE is a leadership exercise put on by Penn State's Airforce ROTC Detachmen
 # Implementation
 We used [twine](https://twinery.org/), a choose your own adventure story building tool to create a quiz-style game in which participants needed to work through 3 different training scenarios. Participants were presented with a series of challenges in a random order, and had to choose the best Airforce inventory to complete given tasks. There was also a reporting system to break down what tasks they did and did not successfully complete within 3 tries. The finished product can be viewed at <<https://awle.lfgberg.org>>
 
-{{% center %}}[{{ partial "icon.html" "github" }}](https://github.com/lfgberg/AWLE "AWLE GitHub Repo"){{% /center %}}
+<DIV align="justify">[{{ partial "icon.html" "github" }}](https://github.com/lfgberg/AWLE "AWLE GitHub Repo")</DIV>
