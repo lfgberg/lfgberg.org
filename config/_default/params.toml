@@ -47,7 +47,7 @@ enableCodeCopy = true
   showTaxonomies = true
   showWordCount = false
   showSummary = true
-  #sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
+  sharingLinks = false
 
 [list]
   showBreadcrumbs = false
