@@ -29,25 +29,25 @@ enableCodeCopy = true
   showMoreLinkDest = "/posts"
 
 [article]
-  showDate = true
+  showDate = false
   #showViews = true
   #showLikes = true
   showDateUpdated = false
-  showAuthor = true
+  showAuthor = false
   showBreadcrumbs = true
   showDraftLabel = true
-  showEdit = true
+  showEdit = false
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
-  showReadingTime = true
+  showReadingTime = false
   showTableOfContents = true
-  showTaxonomies = false 
-  showWordCount = true
+  showTaxonomies = true
+  showWordCount = false
   showSummary = true
-  sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
+  #sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 
 [list]
   showBreadcrumbs = false
