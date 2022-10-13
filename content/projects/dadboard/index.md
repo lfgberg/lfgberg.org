@@ -2,7 +2,6 @@
 title: "Dadboard PCB"
 description: "Custom Keyboard PCB Commission"
 categories: ["hardware"]
-show_date: false
 ---
 {{< alert >}}
 **Warning!** This PCB Hasn't been produced and tested, do so at your own risk!
