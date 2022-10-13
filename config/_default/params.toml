@@ -54,7 +54,7 @@ enableCodeCopy = true
   showSummary = false
   showTableOfContents = false
   showCards = false
-  groupByYear = true
+  groupByYear = false
 
 [sitemap]
   excludedKinds = []
