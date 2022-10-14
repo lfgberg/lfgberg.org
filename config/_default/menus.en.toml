@@ -15,10 +15,10 @@
   pageRef = "projects"
   weight = 10
 
-[[main]]
-  name = "Underwater Photography"
-  pageRef = "uwphoto"
-  weight = 20
+#[[main]]
+#  name = "Underwater Photography"
+#  pageRef = "uwphoto"
+#  weight = 20
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
@@ -30,7 +30,7 @@
   pageRef = "projects"
   weight = 10
 
- [[footer]]
-  name = "Underwater Photography"
-  pageRef = "uwphoto"
-  weight = 20
+# [[footer]]
+#  name = "Underwater Photography"
+#  pageRef = "uwphoto"
+#  weight = 20
