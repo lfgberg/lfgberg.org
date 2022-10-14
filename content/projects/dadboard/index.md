@@ -1,6 +1,7 @@
 ---
 title: "Dadboard PCB"
 description: "Custom Keyboard PCB Commission"
+date: "13 October 2021"
 categories: ["hardware"]
 ---
 {{< alert >}}

@@ -1,6 +1,7 @@
 ---
 title: "Latte FRL PCB"
 description: "Custom Keyboard PCB"
+date: "27 October 2021"
 categories: ["hardware"]
 ---
 {{< alert >}}

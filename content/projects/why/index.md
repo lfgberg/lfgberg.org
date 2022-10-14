@@ -1,6 +1,7 @@
 ---
 title: "Why PCB"
 description: "Custom Keyboard PCB Commission"
+date: "5 April 2021"
 categories: ["hardware"]
 ---
 {{< alert >}}
