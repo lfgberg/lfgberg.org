@@ -1,1 +1,1 @@
-[View All Projects](projects)
+{{ ref . "projects" }}
