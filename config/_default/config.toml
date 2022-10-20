@@ -5,7 +5,7 @@
 # Theme
 theme = "blowfish"
 
-baseURL = "https://lfgberg.org/"
+baseURL = "https://hugo-portfolio-site.pages.dev/"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
