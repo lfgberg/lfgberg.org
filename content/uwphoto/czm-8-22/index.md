@@ -14,7 +14,7 @@ date: "August 2022"
 ![Painted Elysia](uwphoto/czm-8-22/paintedElysia.JPG "Painted Elysia")
 ![Pipefish](uwphoto/czm-8-22/pipefish.JPG "Pipefish")
 ![Roughhead Blenny](uwphoto/czm-8-22/roughHeadBlenny.JPG "Roughhead Blenny")
-![Sexy Shrimp](uwphoto/czm-8-22/sexyShrimp.JPG "sexyShrimp")
+![Sexy Shrimp](uwphoto/czm-8-22/sexyShrimp.JPG "Sexy Shrimp")
 ![Slender Filefish](uwphoto/czm-8-22/slenderFilefish.JPG "Slender Filefish")
 ![Whale Shark](uwphoto/czm-8-22/whaleShark.JPG "Whale Shark")
 
