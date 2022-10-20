@@ -30,7 +30,7 @@
   pageRef = "categories"
   weight = 10
 
-# [[footer]]
+ [[footer]]
   name = "Underwater Photography"
   pageRef = "uwphoto"
   weight = 20
