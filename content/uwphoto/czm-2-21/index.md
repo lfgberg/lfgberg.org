@@ -1,7 +1,7 @@
 ---
-title: "Cozumel August 2020"
-description: "Biannual LDC trip to Cozumel"
-date: "August 2020"
+title: "Cozumel Febuary 2021"
+description: "Carnival LDC trip to Cozumel"
+date: "Febuary 2021"
 ---
 ![Banded Jawfish With Eggs](uwphoto/czm-8-20/bandedJawfish.JPG "Banded Jawfish With Eggs")
 ![Carribean Reef Octopus](uwphoto/czm-8-20/caribbeanReefOctopus.JPG)
