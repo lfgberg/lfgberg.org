@@ -5,7 +5,7 @@ isoCode = "en"
 weight = 1
 rtl = false
 
-title = "Lfgberg"
+#title = "Lfgberg"
 logo = "lg.png"
 description = "Super cool site for a super cool dude"
 # copyright = "Copy, _right?_ :thinking_face:"
