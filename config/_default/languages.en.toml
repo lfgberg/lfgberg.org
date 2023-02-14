@@ -6,7 +6,7 @@ weight = 1
 rtl = false
 
 title = "Lfgberg"
-# logo = "lg.png"
+logo = "static/favicon-32x32.png"
 description = ""
 # copyright = "Copy, _right?_ :thinking_face:"
 
