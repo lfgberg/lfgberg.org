@@ -1,7 +1,7 @@
 ---
 title: "Roatan October 2019"
 description: "First trip to Coco View Resort, Roatan"
-date: "October 2019"
+date: 2019-09-01
 ---
 ![Barracuda](uwphoto/roatan-19/barracuda.jpg "Barracuda")
 ![Harlequin Pipefish](uwphoto/roatan-19/harlequin.jpg "Harlequin Pipefish")

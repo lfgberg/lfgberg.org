@@ -1,7 +1,7 @@
 ---
 title: "Cozumel August 2022"
 description: "Biannual LDC trip to Cozumel"
-date: "August 2022"
+date: 2022-08-01
 ---
 # Daytime Shots
 ![Peacock Flounder](uwphoto/czm-8-22/peacockFlounder.JPG "Peacock Flounder")

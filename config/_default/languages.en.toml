@@ -10,7 +10,7 @@ logo = "lg.png"
 description = "Super cool site for a super cool dude"
 # copyright = "Copy, _right?_ :thinking_face:"
 
-dateFormat = "January 2006"
+dateFormat = 2006-01-02
 
 [author]
   name = "Liam Geyer"

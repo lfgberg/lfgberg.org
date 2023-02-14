@@ -1,7 +1,7 @@
 ---
 title: "Why PCB"
 description: "Custom Keyboard PCB Commission"
-date: "April 2021"
+date: 2021-04-01
 categories: ["Hardware"]
 tags: ["QMK", "PCB Design", "KiCad"]
 ---

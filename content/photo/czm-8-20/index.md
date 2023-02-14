@@ -1,7 +1,7 @@
 ---
 title: "Cozumel August 2020"
 description: "Biannual LDC trip to Cozumel"
-date: "August 2020"
+date: 2020-08-01
 ---
 ![Carribean Reef Octopus](uwphoto/czm-8-20/carribeanReefOctopus.jpg "Carribean Reef Octopus")
 ![Juvenile Drumfish](uwphoto/czm-8-20/juvenileDrumfish.jpg "Juvenile Drumfish")

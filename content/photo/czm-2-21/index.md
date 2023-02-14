@@ -1,7 +1,7 @@
 ---
 title: "Cozumel Febuary 2021"
 description: "Carnival LDC trip to Cozumel"
-date: "Febuary 2021"
+date: 2021-02-01
 ---
 ![Banded Jawfish With Eggs](uwphoto/czm-2-21/bandedJawfish.JPG "Banded Jawfish With Eggs")
 ![Carribean Reef Octopus](uwphoto/czm-2-21/caribeanReefOctopus.JPG)

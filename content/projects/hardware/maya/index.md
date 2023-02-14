@@ -1,7 +1,7 @@
 ---
 title: "Maya PCBs"
 description: "Custom Keyboard PCB Commission"
-date: "August 2021"
+date: 2021-08-01
 categories: ["Hardware"]
 tags: ["QMK", "PCB Design", "KiCad"]
 ---

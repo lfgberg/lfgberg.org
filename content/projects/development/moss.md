@@ -1,7 +1,7 @@
 ---
 title: "MOSS Submission Script"
 description: "Bash script to process student submissions"
-date: "February 2023"
+date: 2023-02-01
 categories: ["Development"]
 tags: ["bash"]
 ---

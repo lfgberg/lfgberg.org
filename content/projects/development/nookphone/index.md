@@ -1,7 +1,7 @@
 ---
 title: "NookPhone Rainmeter Skin"
 description: "Rainmeter Skin based after the NookPhone from Animal Crossing New Horizons"
-date: "May 2020"
+date: 2020-05-01
 categories: ["Development"]
 tags: ["Rainmeter"]
 ---

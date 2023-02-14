@@ -1,7 +1,7 @@
 ---
 title: "Keyboard Discord Bot"
 description: "Node.JS based discord bot for mechanical keyboard utilities"
-date: "September 2021"
+date: 2021-09-01
 categories: ["Development"]
 tags: ["Node.JS", "JavaScript"]
 ---

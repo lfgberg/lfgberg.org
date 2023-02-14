@@ -1,7 +1,7 @@
 ---
 title: "Roatan August 2021"
 description: "West side of Roatan"
-date: "August 2021"
+date: 2021-08-01
 ---
 # Me :)
 ![Me](uwphoto/roatan-21/me1.jpg)
