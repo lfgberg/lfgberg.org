@@ -58,7 +58,7 @@ mainSections = ["development", "hardware"]
   showBreadcrumbs = false
   showSummary = false
   showTableOfContents = false
-  cardView = false
+  cardView = true
   groupByYear = false
 
 [sitemap]
