@@ -12,8 +12,21 @@
 
 [[main]]
   name = "Projects"
-  pageRef = "categories"
+  pageRef = "projects"
   weight = 10
+
+[[main]]
+  name = "Development"
+  parent = "Projects"
+  pageRef = "development"
+  weight = 10
+
+[[main]]
+  name = "Hardware"
+  parent = "Projects"
+  pageRef = "hardware"
+  weight = 20
+
 
 [[main]]
   name = "Underwater Photography"
@@ -27,8 +40,20 @@
 
  [[footer]]
   name = "Projects"
-  pageRef = "categories"
+  pageRef = "projects"
   weight = 10
+
+[[footer]]
+  name = "Development"
+  parent = "Projects"
+  pageRef = "development"
+  weight = 10
+
+[[footer]]
+  name = "Hardware"
+  parent = "Projects"
+  pageRef = "hardware"
+  weight = 20
 
  [[footer]]
   name = "Underwater Photography"

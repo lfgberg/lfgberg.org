@@ -1,1 +1,0 @@
-[View All Projects](https://lfgberg.org/projects)
