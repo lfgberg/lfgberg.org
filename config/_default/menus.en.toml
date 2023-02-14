@@ -12,20 +12,26 @@
 
 [[main]]
   name = "Projects"
+  weight = 10
+
+[[main]]
+  name = "All Projects"
+  parent = "Projects"
   pageRef = "projects"
   weight = 10
+
 
 [[main]]
   name = "Development"
   parent = "Projects"
   pageRef = "development"
-  weight = 10
+  weight = 20
 
 [[main]]
   name = "Hardware"
   parent = "Projects"
   pageRef = "hardware"
-  weight = 20
+  weight = 30
 
 
 [[main]]
@@ -44,16 +50,22 @@
   weight = 10
 
 [[footer]]
+  name = "All Projects"
+  parent = "Projects"
+  pageRef = "projects"
+  weight = 10
+
+[[footer]]
   name = "Development"
   parent = "Projects"
   pageRef = "development"
-  weight = 10
+  weight = 20
 
 [[footer]]
   name = "Hardware"
   parent = "Projects"
   pageRef = "hardware"
-  weight = 20
+  weight = 30
 
  [[footer]]
   name = "Underwater Photography"
