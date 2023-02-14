@@ -2,7 +2,7 @@
 title: "AWLE"
 description: "Leadership Exercise Developed for Penn State ROTC Detachment 720"
 date: "September 2022"
-categories: ["development"]
+categories: ["Development"]
 ---
 # Background
 The AWLE is a leadership exercise put on by Penn State's Airforce ROTC Detachment once per semester. It's an exercise meant to test knowledge of their cirriculum content, and effective leadership and followership from participants. I lead a joint effort between the [Competitive Cybersecurity Organization](https://ccso.psu.edu/), and AFROTC, to create the Fall 2022 AWLE.

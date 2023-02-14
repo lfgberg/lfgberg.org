@@ -2,7 +2,7 @@
 title: "Why PCB"
 description: "Custom Keyboard PCB Commission"
 date: "April 2021"
-categories: ["hardware"]
+categories: ["Hardware"]
 ---
 {{< alert >}}
 **Warning!** This PCB Hasn't been finished, produced, or tested, do so at your own risk!
