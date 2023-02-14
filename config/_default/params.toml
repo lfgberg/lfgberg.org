@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
-# mainSections = ["section1", "section2"]
+mainSections = ["Projects"]
 # robots = ""
 
 [footer]
@@ -23,11 +23,13 @@ enableCodeCopy = true
 
 [homepage]
   layout = "hero" # valid options: page, profile, custom
-  showRecent = false
+  showRecent = true
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
   homepageImage = "homepage.jpg"
+  cardView = true
+  cardViewScreenWidth = true
 
 [article]
   showDate = false
