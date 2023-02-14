@@ -2,7 +2,7 @@
 title: "Maya PCBs"
 description: "Custom Keyboard PCB Commission"
 date: "August 2021"
-categories: ["hardware"]
+categories: ["Hardware"]
 ---
 Both of these PCBs were commissioned for [DerpTurtle](https://github.com/RyanWooHoo), and are not currently open-source.
 # Maya TKL
