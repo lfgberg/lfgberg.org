@@ -22,11 +22,12 @@ enableCodeCopy = true
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, custom
+  layout = "hero" # valid options: page, profile, custom
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
+  homepageImage = "/assets/homepage.jpg"
 
 [article]
   showDate = false
