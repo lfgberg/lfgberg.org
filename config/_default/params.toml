@@ -23,7 +23,7 @@ mainSections = ["development", "hardware"]
 
 [homepage]
   layout = "hero" # valid options: page, profile, custom
-  showRecent = true
+  showRecent = false
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
