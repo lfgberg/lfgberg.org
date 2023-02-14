@@ -56,7 +56,7 @@ mainSections = ["Projects"]
   showBreadcrumbs = false
   showSummary = false
   showTableOfContents = false
-  showCards = true
+  cardView = true
   groupByYear = false
 
 [sitemap]
