@@ -16,20 +16,22 @@ mainSections = ["development", "hardware"]
 # robots = ""
 
 [footer]
-  showCopyright = false
+  showCopyright = true
   showThemeAttribution = false
   showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
-  layout = "hero" # valid options: page, profile, custom
+  layout = "background" # valid options: page, profile, custom
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
   homepageImage = "homepage.jpg"
-  cardView = true
-  cardViewScreenWidth = true
+  cardView = false
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = true
+
 
 [article]
   showDate = false

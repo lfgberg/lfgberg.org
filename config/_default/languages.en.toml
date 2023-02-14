@@ -8,7 +8,7 @@ rtl = false
 title = "Lfgberg"
 #logo = "lg.png"
 description = "Super cool site for a super cool dude"
-# copyright = "Copy, _right?_ :thinking_face:"
+copyright = "© 2023 Lfgberg"
 
 dateFormat = "January 2006"
 
