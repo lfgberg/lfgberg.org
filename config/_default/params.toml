@@ -27,7 +27,7 @@ enableCodeCopy = true
   showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
-  homepageImage = "assets/homepage.jpg"
+  homepageImage = "homepage.jpg"
 
 [article]
   showDate = false
