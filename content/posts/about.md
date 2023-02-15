@@ -1,5 +1,6 @@
 ---
 title: "About Me"
+description: "Some more about me :)"
 date: 2023-02-24
 ---
 ![Me!](homepage.jpg)
