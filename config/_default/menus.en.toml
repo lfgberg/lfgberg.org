@@ -12,7 +12,7 @@
 
 [[main]]
   name = "About"
-  pageRef = "blog/about"
+  pageRef = "about"
   weight = 10
 
 [[main]]
@@ -54,7 +54,7 @@
 
 [[footer]]
   name = "About"
-  pageRef = "blog/about"
+  pageRef = "about"
   weight = 10
 
 [[footer]]

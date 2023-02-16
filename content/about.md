@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "About"
 description: "Some more about me :)"
 date: 2023-02-24
 posts: ["Blog"]
