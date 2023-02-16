@@ -25,7 +25,6 @@
   pageRef = "projects"
   weight = 10
 
-
 [[main]]
   name = "Development"
   parent = "Projects"
@@ -38,6 +37,11 @@
   pageRef = "hardware"
   weight = 30
 
+[[main]]
+  name = "Coursework"
+  parent = "Projects"
+  pageRef = "coursework"
+  weight = 40
 
 [[main]]
   name = "Underwater Photography"
@@ -62,6 +66,11 @@
   name = "Hardware"
   pageRef = "hardware"
   weight = 30
+
+[[footer]]
+  name = "Coursework"
+  pageRef = "coursework"
+  weight = 40
 
  [[footer]]
   name = "Underwater Photography"
