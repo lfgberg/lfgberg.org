@@ -80,6 +80,13 @@ mainSections = ["development", "hardware"]
   # site = "ABC12345"
   # domain = "llama.yoursite.com"
 
+[buymeacoffee]
+   identifier = "lfgberg"
+   globalWidget = true
+  # globalWidgetMessage = "Hello"
+   globalWidgetColor = "#3b82f6"
+  # globalWidgetPosition = "Right"
+
 [verification]
   # google = ""
   # bing = ""
