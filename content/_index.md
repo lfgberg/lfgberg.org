@@ -1,9 +1,3 @@
----
-title: "About Me"
-description: "Some more about me :)"
-date: 2023-02-24
-types: ["Blog"]
----
 # About Me
 I'm a Cybersecurity Analytics and Operations Major at Penn State University Park expecting to graduate in 2025. Apart from being a full-time student working multiple jobs, I'm extremely passionate about SCUBA and underwater photography. I also maintain various personal projects such as the design of various mechanical keyboards.
 
