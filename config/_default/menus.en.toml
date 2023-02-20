@@ -11,13 +11,8 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "About"
-  pageRef = "about"
-  weight = 10
-
-[[main]]
   name = "Projects"
-  weight = 20
+  weight = 10
 
 [[main]]
   name = "All Projects"
@@ -46,31 +41,26 @@
 [[main]]
   name = "Underwater Photography"
   pageRef = "photo"
-  weight = 30
+  weight = 20
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
 [[footer]]
-  name = "About"
-  pageRef = "about"
-  weight = 10
-
-[[footer]]
   name = "Development"
   pageRef = "development"
-  weight = 20
+  weight = 10
 
 [[footer]]
   name = "Hardware"
   pageRef = "hardware"
-  weight = 30
+  weight = 20
 
 [[footer]]
   name = "Coursework"
   pageRef = "coursework"
-  weight = 40
+  weight = 30
 
  [[footer]]
   name = "Underwater Photography"
