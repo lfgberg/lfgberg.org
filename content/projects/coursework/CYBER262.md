@@ -7,4 +7,4 @@ tags: ["bash", "automation"]
 ---
 Bash automation scripts for  [CYBER262](https://bulletins.psu.edu/search/?search=cyber+262&psusearchname=%2Fsearch%2F), Cyber Defense Studio. This lab-focused hands on course emphasized blue team activities and tools such as working with ELK for centralized logging, OSSEC, etc.
 
-[{{< icon "github" >}}&nbsp;&nbsp;&nbsp;&nbsp;itHub Repo](https://github.com/lfgberg/CYBER262)
+[{{< icon "github" >}}&nbsp;&nbsp;&nbsp;&nbsp;GitHub Repo](https://github.com/lfgberg/CYBER262)
