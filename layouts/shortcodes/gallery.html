@@ -10,16 +10,18 @@
     .image-gallery li a img {width: 100%; display: block;}
 </style>
 
+{{ $dir := string .gallery_dir }}
 <ul class="image-gallery">
-{{ $logo := resources.Get "img/overlay-logo.png" }}
-{{ $image := (.Page.Resources.ByType "image") }}
-{{ with $image }}
-	{{ range . }}
-	{{ $thumbname := printf "%s/%s%s%s" (path.Dir .RelPermalink) (path.BaseName .RelPermalink) "_t" (path.Ext .RelPermalink) }}
-	{{ $resized := .Fill "300x300 q80" | resources.Copy $thumbname }}
+{{ range (readDir (print "/assets/" $dir)) }}
+  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
+  {{- $imageurl := printf "%s/%s" $dir .Name -}}
+  {{- $imagetitle := index (split .Name ".") 0 -}}
     <li>
-	    <a href="{{ .Permalink }}" data-lightbox="x" data-title="{{ with .Exif }}{{ .Tags.ImageDescription }}{{ end }}"><img src="{{ $resized.Permalink }}" /></a>
+      <a href="{{ ($image.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
+        <img src="{{ ($image.Fill "500x500 q75").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+        <span>{{ $imagetitle }}</span>
+      </a>
     </li>
-	{{ end }}
+  
 {{ end }}
 </ul>
