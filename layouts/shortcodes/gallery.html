@@ -5,11 +5,11 @@
 {{ $logo := resources.Get "img/overlay-logo.png" }}
 {{ $image := (.Page.Resources.ByType "image") }}
 {{ with $image }}
-    {{ range . }}
-    {{ $thumbname := printf "%s/%s%s%s" (path.Dir .RelPermalink) (path.BaseName .RelPermalink) "_t" (path.Ext .RelPermalink) }}
-    {{ $resized := .Fill "150x115 q80" | resources.Copy $thumbname }}
-    {{ $x := sub .Width (add $logo.Width 10) }}
-    {{ $y := sub .Height (add $logo.Height 10) }}
-    <a href="{{ $withlogo.Permalink }}" data-lightbox="x" data-title="{{ with .Exif }}{{ .Tags.ImageDescription }}{{ end }}"><img src="{{ $resized.Permalink }}" /></a>
-    {{ end }}
+	{{ range . }}
+	{{ $thumbname := printf "%s/%s%s%s" (path.Dir .RelPermalink) (path.BaseName .RelPermalink) "_t" (path.Ext .RelPermalink) }}
+	{{ $resized := .Fill "150x115 q80" | resources.Copy $thumbname }}
+	{{ $x := sub .Width (add $logo.Width 10) }}
+	{{ $y := sub .Height (add $logo.Height 10) }}
+	<a href="{{ $resized.Permalink }}" data-lightbox="x" data-title="{{ with .Exif }}{{ .Tags.ImageDescription }}{{ end }}"><img src="{{ $resized.Permalink }}" /></a>
+	{{ end }}
 {{ end }}
