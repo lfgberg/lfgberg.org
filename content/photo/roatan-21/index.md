@@ -3,8 +3,8 @@ title: "Roatan August 2021"
 description: "West side of Roatan"
 date: 2021-08-01
 ---
-{{< image-gallery gallery_dir="uwphoto/roatan-21/me" >}}
-{{< image-gallery gallery_dir="uwphoto/roatan-21/shark" >}}
+{{< image-gallery gallery_dir="/asssets/uwphoto/roatan-21/me" >}}
+{{< image-gallery gallery_dir="/assets/uwphoto/roatan-21/shark" >}}
 
 # Me :)
 ![Me](uwphoto/roatan-21/me1.jpg)
