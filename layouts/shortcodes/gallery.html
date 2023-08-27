@@ -2,12 +2,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js" integrity="sha256-CtKylYan+AJuoH8jrMht1+1PMhMqrKnB8K5g012WN5I=" crossorigin="anonymous"></script>
 
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery li a img {width: 100%; display: block;}
+</style>
+
+<ul class="image-gallery">
 {{ $logo := resources.Get "img/overlay-logo.png" }}
 {{ $image := (.Page.Resources.ByType "image") }}
 {{ with $image }}
 	{{ range . }}
 	{{ $thumbname := printf "%s/%s%s%s" (path.Dir .RelPermalink) (path.BaseName .RelPermalink) "_t" (path.Ext .RelPermalink) }}
-	{{ $resized := .Fill "150x115 q80" | resources.Copy $thumbname }}
-	<a href="{{ $resized.Permalink }}" data-lightbox="x" data-title="{{ with .Exif }}{{ .Tags.ImageDescription }}{{ end }}"><img src="{{ $resized.Permalink }}" /></a>
+	{{ $resized := .Fill "300x300 q80" | resources.Copy $thumbname }}
+    </li>
+	    <a href="{{ .Permalink }}" data-lightbox="x" data-title="{{ with .Exif }}{{ .Tags.ImageDescription }}{{ end }}"><img src="{{ $resized.Permalink }}" /></a>
+    </li>
 	{{ end }}
 {{ end }}
+</ul>
