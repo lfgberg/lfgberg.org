@@ -3,7 +3,7 @@
 # https://nunocoracao.github.io/blowfish/docs/getting-started/
 
 # Theme
-theme = "blowfish"
+theme = ["blowfish", "hugo-shortcode-gallery"]
 
 baseURL = "https://lfgberg.org/"
 defaultContentLanguage = "en"
