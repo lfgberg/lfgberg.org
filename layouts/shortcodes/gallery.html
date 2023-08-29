@@ -3,6 +3,6 @@
     {{ range (readDir (print "/assets/" $dir)) }}
         {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
         {{- $imagetitle := index (split .Name ".") 0 -}}
-        <img src="{{ ($image.Resize "500x q75" ).RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" alt="{{ $imagetitle }}">
+        <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" alt="{{ $imagetitle }}">
     {{ end }}
 </div>
