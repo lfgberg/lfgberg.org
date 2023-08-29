@@ -13,4 +13,4 @@ tags: ["QMK", "PCB Design", "KiCad"]
 
 This is a PCB commissioned by shiba, I was never paid, so instead of being finished and produced the design was open sourced to my GitHub. It's designed for a one key gasket mounted keyboard, has USB-C, and utilizes an ATMEGA 32u2-MU.
 
-[{{< icon "github" >}}&nbsp;&nbsp;&nbsp;&nbsp;Why GitHub Repo](https://github.com/lfgberg/why-PCB)
+{{< github repo="lfgberg/why-pcb" >}}
