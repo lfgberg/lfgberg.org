@@ -3,7 +3,6 @@
 
 <div class="row" data-masonry='{"percentPosition": true }'>
     {{ $dir := string (.Get "gallery_dir") }}
-    {{- $images := .Resources.ByType "image" -}}
     {{ range (readDir (print "/assets/" $dir)) }}
         {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
         {{- $imagetitle := index (split .Name ".") 0 -}}
