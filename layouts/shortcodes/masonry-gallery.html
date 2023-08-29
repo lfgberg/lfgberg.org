@@ -7,7 +7,7 @@
         {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
         {{- $imagetitle := index (split .Name ".") 0 -}}
         <div class="col-6 col-md-4 col-xl-3 pb-3 px-2">
-            <img src="{{ $image.Permalink }}" height="{{ .Height }}" width="{{ .Width }}" class="img-fluid" alt="{{ $imagetitle }}">
+            <img src="{{ $image.Permalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" class="img-fluid" alt="{{ $imagetitle }}">
         </div>
     {{ end }}
 </div>
