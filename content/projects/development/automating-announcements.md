@@ -10,9 +10,10 @@ While serving as the secretary for CCSO, one of my weekly tasks was to aggregate
 ## Goals
 
 When creating this announcement setup I wanted to make sure it accomplished the following goals:
-*Integrates with the club Sharepoint page
-*Provides a uniform neat format for emails
-*Requires human approval before sending an email
+
+* Integrates with the club's Sharepoint page
+* Provides a uniform neat format for emails
+* Requires human approval before sending an email
 
 ## Setting Up The Workflow
 

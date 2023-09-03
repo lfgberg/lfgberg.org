@@ -13,6 +13,6 @@ tags: ["QMK", "PCB Design", "KiCad"]
 ![PCB back](hardware/latte/latte-back.png "Back of the PCB")
 ![Supported layouts](latte/latte-layouts.png "Supported layouts")
 
-This is a PCB designed for Keyboard Cafe's collaboratively designed Latte FRL Keybaord. It utilizes a unified-c daughterboard for USB, and an ATMEGA 32u4-AU/MU. The PCB Art was designed by [Stellaidescope](https://twitter.com/stellaidoscope).
+This is a PCB designed for Keyboard Cafe's collaboratively designed Latte FRL keyboard. It utilizes a unified-c daughterboard for USB and an ATMEGA 32u4-AU/MU. The PCB Art was designed by [Stellaidescope](https://twitter.com/stellaidoscope).
 
 {{< github repo="lfgberg/latte-frl-pcb" >}}
