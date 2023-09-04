@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["development", "hardware"]
+mainSections = ["Development", "Hardware", "Competitions"]
 # robots = ""
 
 [footer]
@@ -23,13 +23,13 @@ mainSections = ["development", "hardware"]
 
 [homepage]
   layout = "background" # valid options: page, profile, custom
-  showRecent = false
-  showRecentItems = 5
+  showRecent = true
+  # showRecentItems = 5
   showMoreLink = false
   showMoreLinkDest = "/posts"
   homepageImage = "homepage.jpg"
-  cardView = false
-  cardViewScreenWidth = false
+  cardView = true
+  cardViewScreenWidth = true
   layoutBackgroundBlur = true
 
 
