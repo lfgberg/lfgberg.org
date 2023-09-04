@@ -24,7 +24,7 @@ mainSections = ["projects", "posts"]
 [homepage]
   layout = "background" # valid options: page, profile, custom
   showRecent = true
-  # showRecentItems = 5
+  showRecentItems = 20
   showMoreLink = false
   showMoreLinkDest = "/posts"
   homepageImage = "homepage.jpg"
