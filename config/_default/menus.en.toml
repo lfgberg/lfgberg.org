@@ -39,30 +39,30 @@
   weight = 40
 
 [[main]]
+  name = "Posts"
+  pageref = "posts"
+  weight = 20
+
+[[main]]
   name = "Underwater Photography"
   pageRef = "photo"
-  weight = 20
+  weight = 30
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
 [[footer]]
-  name = "Development"
-  pageRef = "development"
+  name = "Projects"
+  pageRef = "projects"
   weight = 10
 
 [[footer]]
-  name = "Hardware"
-  pageRef = "hardware"
+  name = "Posts"
+  pageRef = "posts"
   weight = 20
 
 [[footer]]
-  name = "Coursework"
-  pageRef = "coursework"
-  weight = 30
-
- [[footer]]
   name = "Underwater Photography"
   pageRef = "photo"
-  weight = 40
+  weight = 30
