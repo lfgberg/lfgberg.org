@@ -13,4 +13,4 @@ Cyberforce is a unique competition due to its varied format. Cyberforce utilizes
 
 ## Experience
 
-Placing 3rd for the second year in a row cemented PSU as a meaningful competititor in the Cyberforce competition. Although our team was very strong with incident response, and technical remediations, we were weaker when working with the client. Our C-Suite brief got too technical, and we didn't place enough of an emphasis on protecting the bottom line. Overall, it was a great experience and I'm excited to take the feedback we recieved to build a stronger team next year.
+Placing 3rd for the second year in a row cemented PSU as a meaningful competitor in the Cyberforce competition. Although our team was very strong with incident response, and technical remediations, we were weaker when working with the client. Our C-Suite brief got too technical, and we didn't place enough of an emphasis on protecting the bottom line. Overall, it was a great experience and I'm excited to take the feedback we received to build a stronger team next year.
