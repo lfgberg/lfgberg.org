@@ -1,8 +1,9 @@
 ---
 title: "Cyberforce 2022"
 date: 2022-11-04
-types: ["Competitions"]
+tags: ["Competitions"]
 ---
+
 This was my second year as a participant in the DOE's [Cyberforce Competition](https://cyberforce.energy.gov/), but my first as a team captain for CCSO. Placing third the year before, our team felt a lot of pressure to perform. Cyberforce is fairly unique in its format and multifaceted approach, requiring a significant amount of preparation before competition day, and different varieties of deliverables ranging from Executive Briefs to a day of CTF.
 
 ![CFC Victory Pose](comps/cfc22.png "Nicklaus Giacobe, Petr Esakov, Liam Geyer, Jackson Ortiz, Brenden McShane, Alec Sudol, Jenna Fox")
@@ -13,4 +14,4 @@ Cyberforce is a unique competition due to its varied format. Cyberforce utilizes
 
 ## Experience
 
-Placing 3rd for the second year in a row cemented PSU as a meaningful competititor in the Cyberforce competition. Although our team was very strong with incident response, and technical remediations, we were weaker when working with the client. Our C-Suite brief got too technical, and we didn't place enough of an emphasis on protecting the bottom line. Overall, it was a great experience and I'm excited to take the feedback we recieved to build a stronger team next year.
+Placing 3rd for the second year in a row cemented PSU as a meaningful competitor in the Cyberforce competition. Although our team was very strong with incident response, and technical remediations, we were weaker when working with the client. Our C-Suite brief got too technical, and we didn't place enough of an emphasis on protecting the bottom line. Overall, it was a great experience and I'm excited to take the feedback we received to build a stronger team next year.

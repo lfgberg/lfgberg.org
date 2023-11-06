@@ -11,6 +11,6 @@ tags: ["QMK", "PCB Design", "KiCad"]
 
 ![PCB Image](hardware/why.png "Back of the PCB")
 
-This is a PCB commissioned by shiba, I was never paid, so instead of being finished and produced the design was open sourced to my GitHub. It's designed for a one key gasket mounted keyboard, has USB-C, and utilizes an ATMEGA 32u2-MU.
+This is a PCB commissioned by shiba, I was never paid, so instead of being finished and produced the design was open-sourced to my GitHub. It's designed for a one key gasket mounted keyboard, has USB-C, and utilizes an ATMEGA 32u2-MU.
 
 {{< github repo="lfgberg/why-pcb" >}}
