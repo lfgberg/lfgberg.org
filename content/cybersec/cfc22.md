@@ -1,8 +1,9 @@
 ---
 title: "Cyberforce 2022"
 date: 2022-11-04
-types: ["Competitions"]
+tags: ["Competitions"]
 ---
+
 This was my second year as a participant in the DOE's [Cyberforce Competition](https://cyberforce.energy.gov/), but my first as a team captain for CCSO. Placing third the year before, our team felt a lot of pressure to perform. Cyberforce is fairly unique in its format and multifaceted approach, requiring a significant amount of preparation before competition day, and different varieties of deliverables ranging from Executive Briefs to a day of CTF.
 
 ![CFC Victory Pose](comps/cfc22.png "Nicklaus Giacobe, Petr Esakov, Liam Geyer, Jackson Ortiz, Brenden McShane, Alec Sudol, Jenna Fox")
