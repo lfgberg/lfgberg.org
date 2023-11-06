@@ -40,7 +40,7 @@
 
 [[main]]
   name = "Cybersecurity"
-  pageref = "cybersec"
+  pageref = "posts"
   weight = 20
 
 [[main]]
@@ -59,7 +59,7 @@
 
 [[footer]]
   name = "Cybersecurity"
-  pageRef = "cybersec"
+  pageRef = "posts"
   weight = 20
 
 [[footer]]
