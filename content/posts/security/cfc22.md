@@ -1,6 +1,7 @@
 ---
 title: "Cyberforce 2022"
 date: 2022-11-04
+categories: ["Security"]
 tags: ["Competitions"]
 ---
 

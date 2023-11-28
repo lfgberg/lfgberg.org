@@ -11,37 +11,38 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "Projects"
+  name = "Posts"
   weight = 10
 
 [[main]]
-  name = "All Projects"
-  parent = "Projects"
-  pageRef = "projects"
+  name = "All Posts"
+  parent = "Posts"
+  pageRef = "posts"
   weight = 10
+
+[[main]]
+  name = "Security"
+  parent = "Posts"
+  pageRef = "security"
+  weight = 20
 
 [[main]]
   name = "Development"
-  parent = "Projects"
+  parent = "Posts"
   pageRef = "development"
-  weight = 20
-
-[[main]]
-  name = "Hardware"
-  parent = "Projects"
-  pageRef = "hardware"
   weight = 30
 
 [[main]]
-  name = "Coursework"
-  parent = "Projects"
-  pageRef = "coursework"
+  name = "Hardware"
+  parent = "Posts"
+  pageRef = "hardware"
   weight = 40
 
 [[main]]
-  name = "Cybersecurity"
-  pageref = "posts"
-  weight = 20
+  name = "Coursework"
+  parent = "Posts"
+  pageRef = "coursework"
+  weight = 50
 
 [[main]]
   name = "Underwater Photography"
@@ -53,14 +54,9 @@
 # the copyright notice. Configure as per the main menu above.
 
 [[footer]]
-  name = "Projects"
-  pageRef = "projects"
-  weight = 10
-
-[[footer]]
-  name = "Cybersecurity"
+  name = "Posts"
   pageRef = "posts"
-  weight = 20
+  weight = 10
 
 [[footer]]
   name = "Underwater Photography"

@@ -1,6 +1,7 @@
 ---
 title: "Deloitte Cyber Threat CTF 2023"
 date: 2023-11-01
+categories: ["Security"]
 tags: ["CTF", "Writeup"]
 ---
 
