@@ -23,25 +23,25 @@
 [[main]]
   name = "Security"
   parent = "Posts"
-  pageRef = "security"
+  pageRef = "categories/security"
   weight = 20
 
 [[main]]
   name = "Development"
   parent = "Posts"
-  pageRef = "development"
+  pageRef = "categories/development"
   weight = 30
 
 [[main]]
   name = "Hardware"
   parent = "Posts"
-  pageRef = "hardware"
+  pageRef = "categories/hardware"
   weight = 40
 
 [[main]]
   name = "Coursework"
   parent = "Posts"
-  pageRef = "coursework"
+  pageRef = "categories/coursework"
   weight = 50
 
 [[main]]
