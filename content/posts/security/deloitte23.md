@@ -5,7 +5,7 @@ categories: ["Security"]
 tags: ["CTF", "Writeup"]
 ---
 
-This was my first time participating in Deloitte's Cyber Threat Competition, which consists of two parts. The first round consisted of a brief multiple choice quiz on security and business topics, and a CTF, which I'll be walking through in this post. The top four participants from each participating school are invited to attend round 2 at Deloitte University. I was able to place 9th out of 160 participants, completing all but 2 challenges within the given timeframe.
+This was my first time participating in Deloitte's Cyber Threat Competition, which consists of two parts. The first round consisted of a brief multiple choice quiz on security and business topics, and a CTF, which I'll be walking through in this post. The top participants from each participating school are invited to attend round 2 at Deloitte University. I was able to place 9th out of 160 participants, moving onto round 2, and completing all but 2 challenges within the given timeframe.
 
 ## Introduction Challenge
 
