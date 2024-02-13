@@ -4,7 +4,7 @@ date: 2023-11-29
 categories: ["Security"]
 tags: ["CTF", "Writeup"]
 ---
-![Sync Thumbnail](ctfs/vulnlab/sync/vl-sync.png)
+![Sync Thumbnail](security/vulnlab/sync/vl-sync.png)
 
 This is a write-up of the Sync machine on [VulnLab](https://www.vulnlab.com/) by xct. This box involves anonymous rsync, cracking salted md5 hashes, and manipulating a backup script.
 
@@ -43,7 +43,7 @@ FTP didn't have anonymous login enabled, I didn't have creds or see anything sup
 
 Rsync is a file transfer utility, and we're able to anonymously connect and view the shares with `rsync -av --list-only rsync://<IP>`, I downloaded the open httpd share with `rsync -av rsync://<IP>:873/httpd <output directory>` and found the notable files index.php and site.db:
 
-![Rsync Dump](ctfs/vulnlab/sync/rsync-dump.png)
+![Rsync Dump](security/vulnlab/sync/rsync-dump.png)
 
 Index.php reveals how the authentication process for the site works:
 
@@ -73,11 +73,11 @@ We can see that the password hash consists of the $secure salt value, and userna
 
 With our new credentials, I was able to log into the site as Triss, but didn't get anywhere with it:
 
-![Triss' Dashboard](ctfs/vulnlab/sync/triss-dashboard.png)
+![Triss' Dashboard](security/vulnlab/sync/triss-dashboard.png)
 
 They also didn't work on SSH which requires pubkey authentication, but I was able to login with them on FTP and access Triss' home folder. With write access to the home folder, I added my public key as an authorized key and logged in via SSH. I wasn't able to find anything of note, and linpeas didn't have a lot of useful output, so I started trying Triss' password on the other users on the system. The user Jennifer had the same password, and I was able to add my public key, and get the user flag:
 
-![Jennifer's Home Dir](ctfs/vulnlab/sync/jennifer-home.png)
+![Jennifer's Home Dir](security/vulnlab/sync/jennifer-home.png)
 
 ## Root
 
@@ -87,22 +87,22 @@ Hint: `Check how the backups are done`
 
 I first investigated the backups directory which had multiple zip archives containing backups of the website, /etc/passwd, and /etc/shadow:
 
-![Backups](ctfs/vulnlab/sync/backups.png)
+![Backups](security/vulnlab/sync/backups.png)
 
-![Backup Contents](ctfs/vulnlab/sync/backups.png)
+![Backup Contents](security/vulnlab/sync/backups.png)
 
 I dumped the contents of shadow, and cracked the hash of the sa user which was encoded with yescrypt:
 
-![Shadow](ctfs/vulnlab/sync/shadow.png)
+![Shadow](security/vulnlab/sync/shadow.png)
 
 ### Backup Script
 
 Now as sa, I investigated how the backups were actually performed. I looked for anything that may be related with `find / | grep backup`:
 
-![Searching for the Backup Script](ctfs/vulnlab/sync/backup-sh-found.png)
+![Searching for the Backup Script](security/vulnlab/sync/backup-sh-found.png)
 
-![Backup Script](ctfs/vulnlab/sync/backup-script.png)
+![Backup Script](security/vulnlab/sync/backup-script.png)
 
 I found backup.sh which we can see is responsible for creating the backups. This script is likely ran as root because it's interacting with /etc/shadow, and we have write permissions over the script. I added the line `useradd -m -s /bin/bash -G sudo lfgberg && echo 'lfgberg:password1' | chpasswd` to create a new superuser named lfgberg the next time the script is run, which I logged in as to grab the root flag:
 
-![Root Flag](ctfs/vulnlab/sync/root-flag.png)
+![Root Flag](security/vulnlab/sync/root-flag.png)

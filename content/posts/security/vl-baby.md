@@ -4,7 +4,7 @@ date: 2023-11-22
 categories: ["Security"]
 tags: ["CTF", "Writeup", "AD"]
 ---
-![Baby Thumbnail](ctfs/vulnlab/baby/vl-baby.png)
+![Baby Thumbnail](security/vulnlab/baby/vl-baby.png)
 
 This is a write-up of the Baby machine on [VulnLab](https://www.vulnlab.com/) by xct. This box deals with anonymous LDAP enumeration, and exploitation of the SeBackupPrivilege to exfiltrate and crack user hashes.
 
@@ -121,7 +121,7 @@ Ian.Walker
 
 I used CrackMapExec to perform an SMB password spray against those users with `crackmapexec smb IP -u ./users.txt -p PASSWORD --shares`:
 
-![SMB Password Spray](ctfs/vulnlab/baby/cme-smb-passwd-spray.png)
+![SMB Password Spray](security/vulnlab/baby/cme-smb-passwd-spray.png)
 
 From this, we see that the password works on Caroline Robinson's account, but her password needs to be changed.
 
@@ -129,7 +129,7 @@ From this, we see that the password works on Caroline Robinson's account, but he
 
 Before we can login, we have to change the account's password. I utilized smbpasswd for this using `smbpasswd -r IP -U USER`. Next, we can login using EvilWinRM and get the user flag with `evil-winrm -i IP -u Caroline.Robinson -p PASSWORD`:
 
-![User Flag](ctfs/vulnlab/baby/user-flag.png)
+![User Flag](security/vulnlab/baby/user-flag.png)
 
 ## Root
 
@@ -137,7 +137,7 @@ Hint: `Look at user privileges.`
 
 I started by enumerating the permissions of our Caroline.Robinson user with `whoami /priv`:
 
-![Initial Permissions](ctfs/vulnlab/baby/initial-privs.png)
+![Initial Permissions](security/vulnlab/baby/initial-privs.png)
 
 ### SeBackupPrivilege
 
@@ -145,7 +145,7 @@ Of note is the SeBackupPrivilege allows a user to backup any file on a machine, 
 
 I then fed the files into mimikatz and got the following hashes:
 
-![Local Hashes](ctfs/vulnlab/baby/local-creds.png)
+![Local Hashes](security/vulnlab/baby/local-creds.png)
 
 However, when attempting to pass the Administrator hash to login with `evil-winrm -i IP -u 'administrator' -H 'HASH'`, it doesn't work because these are local accounts as opposed to domain accounts. To get the domain administrator hash that we need to log in, we have to use the SeBackupPrivilege to dump the ntds.dit file which is a database containing AD information including user objects. 
 
@@ -168,4 +168,4 @@ end backupX
 
 I ran it with `diskshadow /s backup.txt`, and was able to dump the ntds.dit with `robocopy /b E:\Windows\ntds . ntds.dit`. Feeding those into secretsdump with `impacket-secretsdump -ntds ntds.dit -system system.hive local` we get the domain administrator hash which we can pass to login and get the root flag:
 
-![Root Flag](ctfs/vulnlab/baby/root-flag.png)
+![Root Flag](security/vulnlab/baby/root-flag.png)
