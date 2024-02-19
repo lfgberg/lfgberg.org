@@ -8,9 +8,9 @@ I'm an integrated M.S. and B.S. Cybersecurity Analytics and Operations Major at 
 
 In addition to my coursework, I'm the Vice President of the [Competitive Cybersecurity Organization (CCSO)](https://ccso.psu.edu/). I create and plan meetings, organize and run teams for defensive cybersecurity competitions, and manage other ad hoc projects such as our merchandise. CCSO brought me together with amazing friends and provided wonderful opportunities to travel and compete against other institutions.
 
-### Instructional Assistant - IST140
+### Instructional Assistant
 
-I currently serve as an Instructional Assistant for IST140, Introduction to application development. In addition to grading and providing feedback on programming assignments, I regularly hold office hours and provide a 1:1 environment for students to get help with the course.
+I currently serve as an Instructional Assistant for Java Courses IST242 and IST140. In addition to grading and providing feedback on programming assignments and quizzes, I regularly hold office hours and provide a 1:1 environment for students to get help with the course.
 
 ### Lynnhaven Dive Center
 
