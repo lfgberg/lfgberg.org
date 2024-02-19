@@ -48,9 +48,10 @@ This will also proxy all implant traffic through Cloudflare, and won't expose th
 ### Sliver
 
 SSH into the Sliver server using the public IP provided by Oracle, the following items will need to be done:
-*Configure firewall rules
-*Install Sliver + Dependencies
-*Configure Sliver
+
+1. Configure firewall rules
+2. Install Sliver + Dependencies
+3. Configure Sliver
 
 #### Configuring the Firewall
 
