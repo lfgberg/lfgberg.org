@@ -35,7 +35,7 @@ mainSections = ["projects", "posts", "photo"]
 
 [article]
   showDate = true
-  showViews = true
+  showViews = false
   #showLikes = true
   showDateUpdated = false
   showAuthor = false
