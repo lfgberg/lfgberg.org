@@ -157,7 +157,7 @@ This realistic scenario was fun and engaging to work through, during the exercis
 
 ### Brief
 
-![Yappin Away](security/dctc24/professional-yapper.JPG)
+![Yappin Away](security/dctc24/yappin.JPG)
 
 After the wargame, teams had 3 hours to prepare a brief for GDD's C-Suite Executives to update them on the recent attack. We weren't able to bring any materials from the wargame out of the room, so detailed note-taking was critical to have all the information.
 
