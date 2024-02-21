@@ -18,7 +18,7 @@ mainSections = ["projects", "posts", "photo"]
 [footer]
   showCopyright = true
   showThemeAttribution = false
-  showAppearanceSwitcher = true
+  showAppearanceSwitcher = false
   showScrollToTop = true
 
 [homepage]
@@ -35,7 +35,7 @@ mainSections = ["projects", "posts", "photo"]
 
 [article]
   showDate = true
-  #showViews = true
+  showViews = true
   #showLikes = true
   showDateUpdated = false
   showAuthor = false
