@@ -153,7 +153,7 @@ Throughout the wargame, the following occurred over 8 scenarios:
 
 The forensic report revealed the full story behind the attack. A malicious actor was able to socially engineer a GDD employee via vishing, gaining admin access to the company's infrastructure. They then exfiltrated customer/employee information and began deploying ransomware. The DDoS attack on GDD's website was conducted to distract from the larger campaign.
 
-This realistic scenario was fun and engaging to work through, during the exercise we had very little information about the technical controls or IC/BC policies GDD had in place. As a result during each scenario, we had to work through every possibility ensuring that we thought through not only technically how to respond to the incident but also how to mitigate the reputational fallout and manage the impact on critical business functions as a result of the PMS downtime.
+This realistic scenario was fun and engaging to work through, during the exercise we had very little information about the technical controls or IR/BC policies GDD had in place. As a result during each scenario, we had to work through every possibility ensuring that we thought through not only technically how to respond to the incident but also how to mitigate the reputational fallout and manage the impact on critical business functions as a result of the PMS downtime.
 
 ### Brief
 
@@ -169,4 +169,4 @@ Teams were asked to:
 
 The brief had a rapid turnaround time with little time to practice, and a strict 8-minute time limit excluding questions. I provided a timeline of the attack and focused on our immediate actions taken during the wargame. My teammates detailed the technical and policy changes we recommended, and the financial/operational/reputational impacts of the attack.
 
-Overall I enjoyed the Cyber Threat Competition and found it to be a fun counterpart to the more technical competitions like CCDC/CPTC. My teammates and tabe judge were wonderful to work with and I learned more about the nontechnical aspects of the incident response cycle.
+Overall I enjoyed the Cyber Threat Competition and found it to be a fun counterpart to the more technical competitions like CCDC/CPTC. My teammates and table judge were wonderful to work with and I learned more about the nontechnical aspects of the incident response cycle.
