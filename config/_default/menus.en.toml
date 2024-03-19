@@ -11,8 +11,13 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "Posts"
+  name = "About Me"
+  pageRef = "about"
   weight = 10
+
+[[main]]
+  name = "Posts"
+  weight = 20
 
 [[main]]
   name = "All Posts"
@@ -54,9 +59,14 @@
 # the copyright notice. Configure as per the main menu above.
 
 [[footer]]
+  name = "About Me"
+  pageRef = "about"
+  weight = 10
+
+[[footer]]
   name = "Posts"
   pageRef = "posts"
-  weight = 10
+  weight = 20
 
 [[footer]]
   name = "Underwater Photography"
