@@ -1,3 +1,1 @@
-# whoami
-
-I'm a Cybersecurity student at Penn State, and the President of the [Competitive Cybersecurity Organization (CCSO)](https://ccso.psu.edu/). I'm interested in physical and IoT/OT Security, and am extremely passionate about SCUBA and underwater photography. If you're interested in hearing me yap more checkout [About Me]({{< ref "/about" >}} "About Me").
+I'm a Cybersecurity student at Penn State, and the President of the [Competitive Cybersecurity Organization (CCSO)](https://ccso.psu.edu/). I'm interested in physical and IoT/OT Security, and am extremely passionate about SCUBA and underwater photography. If you're interested in hearing me yap more about myself checkout [About Me]({{< ref "/about" >}} "About Me").
