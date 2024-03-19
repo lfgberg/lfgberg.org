@@ -1,5 +1,6 @@
 ---
 title: "About Me"
+description: "A little about myself"
 date: 2024-19-03
 ---
 
