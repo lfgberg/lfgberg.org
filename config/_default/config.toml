@@ -16,7 +16,7 @@ timeout = 180000
 buildDrafts = false
 buildFuture = false
 
-# googleAnalytics = "G-XXXXXXXXX"
+googleAnalytics = "G-80P7KGTQ64"
 
 [sitemap]
   changefreq = 'daily'
