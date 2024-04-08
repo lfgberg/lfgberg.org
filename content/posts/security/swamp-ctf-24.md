@@ -9,11 +9,7 @@ I recently participated in [SwampCTF](https://swampctf.com/), a 2-day student-ru
 
 ## Ping Pong - Forensics
 
-Prompt:
-
-```text
-What happened to my traffic??? The pings?!?? They're taking over!!!! They're... ping... pong pingpong ping find my pong flag.
-```
+Prompt: `What happened to my traffic??? The pings?!?? They're taking over!!!! They're... ping... pong pingpong ping find my pong flag.`
 
 We're provided with a pcap with almost exclusively ICMP traffic. After examining a couple, it looked like they contained a base64 payload broken up across the packets. The last one in particular gave it away wiith the charictaristic `==`.
 
@@ -59,11 +55,7 @@ I tossed the payload into CyberChef, decoded the base64, and downloaded the resu
 
 ## Easy Pwn - Pwn
 
-Prompt:
-
-```text
-Pwn can be a pretty intimidating catagory to get started in. So we made a few chals to help new comers get their feet wet!
-```
+Prompt: `Pwn can be a pretty intimidating catagory to get started in. So we made a few chals to help new comers get their feet wet!`
 
 This was a pretty easy buffer overflow attack, we're provided with a host to netcat to and a source c file.
 
@@ -173,11 +165,7 @@ employee_phoenix_score=89#_score
 
 ## New C2 Channel? - Forensics
 
-Prompt:
-
-```text
-Sometimes you can exfiltrate data with more than just plain text. Can you figure out how the attacker smuggled out the flag on our network?
-```
+Prompt: `Sometimes you can exfiltrate data with more than just plain text. Can you figure out how the attacker smuggled out the flag on our network?`
 
 The provided pcap only contained some HTTP traffic, and following the stream to look at the contents didn't yield anything interesting:
 
@@ -295,11 +283,7 @@ I only saw 2 users, Administrator, and adamkadaban. Adamkadaban was the popped u
 
 ### Part 2 - Password
 
-Prompt:
-
-```text
-Great job finding the username! We want to find out the password of the account now to see how it was so easily breached. Can you help?
-```
+Prompt: `Great job finding the username! We want to find out the password of the account now to see how it was so easily breached. Can you help?`
 
 From the NTLM challenge response authentication seen in the packet capture, we can extract the needed info to get a hash to crack and find the user's password. I was initially looking for the format `[Username]::[Domain Name]:[NTLM Server Challenge]:[NTProofSTR]:[NTLMv2 Response]`.
 
@@ -321,7 +305,7 @@ We threw a ton at this and it didn't crack. The formatting was in fact wrong. Wh
 adamkadaban:::1fed9e8e0ca470a3:98ebffae0b77865893846dfadb757cfb:0101000000000000801c50dbc266da0188d48d08eff230a80000000002001e0045004300320041004d0041005a002d00450033003300530047004c00380001001e0045004300320041004d0041005a002d00450033003300530047004c00380004001e0045004300320041004d0041005a002d00450033003300530047004c00380003001e0045004300320041004d0041005a002d00450033003300530047004c003800070008005783ebd6c266da010000000000000000
 ```
 
-![Cracked Hash](security/swampctf-24/logon-cracked.png)
+![Cracked Hash](security/swampctf-24/logon-crack.png)
 
 ## Off The Hook - Rev
 
