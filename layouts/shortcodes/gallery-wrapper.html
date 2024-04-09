@@ -3,9 +3,7 @@
 {{ range (readDir (print "/assets/" $dir)) }}
     {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
     {{- $imagetitle := index (split .Name ".") 0 -}}
-    {{ $images = printf "%s\n%s" $images (printf "<img src=\"%s\" class=\"grid-w50 md:grid-w33 xl:grid-w25\" />" ($image.Resize "1000x q90" ).RelPermalink) }}
+    {{- $images = printf "%s\n<img src=\"%s\" class=\"grid-w50 md:grid-w33 xl:grid-w25\" />" $images ($image.Resize "1000x q90" ).RelPermalink }}
 {{ end }}
 
-{{< gallery >}}
-    {{ $images }}
-{{< /gallery >}}
+{{ $images | safeHTML }}
