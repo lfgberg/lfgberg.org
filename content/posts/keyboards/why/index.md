@@ -2,8 +2,7 @@
 title: "Why PCB"
 description: "Custom Keyboard PCB Commission"
 date: 2021-04-01
-categories: ["Hardware"]
-tags: ["QMK", "PCB Design", "KiCad"]
+tags: ["Keyboards", "QMK", "PCB Design", "KiCad"]
 ---
 {{< alert >}}
 **Warning!** This PCB Hasn't been finished, produced, or tested, do so at your own risk!

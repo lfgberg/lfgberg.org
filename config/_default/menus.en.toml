@@ -26,28 +26,22 @@
   weight = 10
 
 [[main]]
-  name = "Security"
+  name = "Competitions"
   parent = "Posts"
-  pageRef = "categories/security"
+  pageRef = "tags/Competitions"
   weight = 20
 
 [[main]]
-  name = "Development"
+  name = "Keyboards"
   parent = "Posts"
-  pageRef = "categories/development"
+  pageRef = "tags/keyboards"
   weight = 30
-
-[[main]]
-  name = "Hardware"
-  parent = "Posts"
-  pageRef = "categories/hardware"
-  weight = 40
 
 [[main]]
   name = "Coursework"
   parent = "Posts"
-  pageRef = "categories/coursework"
-  weight = 50
+  pageRef = "tags/coursework"
+  weight = 40
 
 [[main]]
   name = "Underwater Photography"

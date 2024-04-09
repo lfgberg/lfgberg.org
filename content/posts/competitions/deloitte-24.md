@@ -1,8 +1,7 @@
 ---
 title: "Deloitte Cyber Threat Competition 2024"
 date: 2024-02-17
-categories: ["Security"]
-tags: ["CTF", "Writeup"]
+tags: ["CTF", "Writeup", "Competitions"]
 ---
 
 ![Victory Photo; RAHHHHHHHH](security/dctc-24/victory.JPG)

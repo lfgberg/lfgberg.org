@@ -1,8 +1,7 @@
 ---
 title: "VulnLab - Sync Writeup"
 date: 2023-11-29
-categories: ["Security"]
-tags: ["CTF", "Writeup"]
+tags: ["Vulnlab", "Writeup"]
 ---
 ![Sync Thumbnail](security/vulnlab/sync/vl-sync.png)
 
@@ -12,14 +11,14 @@ This is a write-up of the Sync machine on [VulnLab](https://www.vulnlab.com/) by
 
 Hint:
 
-```
+```text
 Explore how to crack salted md5 hashes - both john & hashcat have a way of doing it.
 Check for file system permission misconfigurations
 ```
 
 I started by performing an nmap scan of the machine, and got the following results:
 
-```
+```text
 PORT    STATE SERVICE VERSION
 21/tcp  open  ftp     vsftpd 3.0.5
 22/tcp  open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)

@@ -1,7 +1,6 @@
 ---
 title: "Free Cloud Red Team Lab Infrastructure"
 date: 2024-02-12
-categories: ["Security"]
 tags: ["C2"]
 ---
 

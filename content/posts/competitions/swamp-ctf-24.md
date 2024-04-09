@@ -1,8 +1,7 @@
 ---
 title: "SwampCTF 2024"
 date: 2024-04-07
-categories: ["Security"]
-tags: ["CTF", "Writeup"]
+tags: ["CTF", "Writeup", "Competitions"]
 ---
 
 I recently participated in [SwampCTF](https://swampctf.com/), a 2-day student-run CTF put on by the University of Florida's [Student Information Security Team](https://ufsit.club/). Our team was madeup of a handful of students from [CCSO](https://psuccso.org), and we were able to place 34th out of 362 participating teams. This CTF was really well run, and the challenges were fun and pretty unique.

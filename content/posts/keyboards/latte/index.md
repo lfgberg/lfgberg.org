@@ -2,8 +2,7 @@
 title: "Latte FRL PCB"
 description: "Custom Keyboard PCB"
 date: 2021-10-01
-categories: ["Hardware"]
-tags: ["QMK", "PCB Design", "KiCad"]
+tags: ["Keyboards", "QMK", "PCB Design", "KiCad"]
 ---
 {{< alert >}}
 **Warning!** This PCB Hasn't been produced and tested, do so at your own risk!
