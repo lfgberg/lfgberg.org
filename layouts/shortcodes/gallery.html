@@ -1,8 +1,0 @@
-<div class="gallery">
-    {{ $dir := string (.Get "gallery_dir") }}
-    {{ range (readDir (print "/assets/" $dir)) }}
-        {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
-        {{- $imagetitle := index (split .Name ".") 0 -}}
-        <img src="{{ ($image.Resize "1000x q90" ).RelPermalink }}" alt="{{ $imagetitle }}" title="{{ with $image.Exif }}{{ .Tags.ImageDescription }}{{ end }}">
-    {{ end }}
-</div>
