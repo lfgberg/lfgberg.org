@@ -12,7 +12,7 @@ This deals with sensitive PHI! All transmissions shown in this post or during th
 
 ## Hospital Pagers
 
-Surprisingly, many hospitals transmit pager data completely unencrypted. In the State College area, I was able to observe messages about Mt. Nittany, and UPMC, with messages being transmitted fairly frequently. Although a lot of the traffic seemed to be from automated systems, various messages were exchanging PHI such as patient phone numbers, names, medications, etc.
+Surprisingly, many hospitals transmit pager data completely unencrypted. In the State College area, I was able to observe messages about Mt. Nittany, Allegheny Health Network, and UPMC, with messages being transmitted fairly frequently. Although a lot of the traffic seemed to be from automated systems, various messages were exchanging PHI such as patient phone numbers, names, medications, etc.
 
 Despite being unencrypted and easy to decode, these pager systems are still fairly widely used due to their range and reliability. Pagers rarely need to be charged, have a long-range, and work when cell networks are down. Additionally, communication is one way, and the low powered devices aren't suited to complex cryptographic operations. [Sam Kim](https://www.samkim.io/#/) has an interesting project [pager-sec](https://github.com/sam-k/pager-sec) where he proposes utilizing ChaCha, a lightweight symmetric encryption protocol, to solve this issue. His project is worth a read and was very helpful when trying to decode local pagers.
 
