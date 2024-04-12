@@ -44,7 +44,7 @@ This command:
 2. Uses sox to reformat the audio
 3. Decodes FLEX/POCSAG w/ multimon-ng
 
-I saved this to `pager-decode.sh` for easy access later on. It might take a while to get a transmission, but you should see decoded messages showing up in the terminal. If your antenna or reception aren't great, the messages may not decode or may have some garbled output. I fiddled with the squelch and gain in gqrx as well to improve results.
+I saved this to `pager-decode.sh` for easy access later on. It might take a while to get a transmission, but you should see decoded messages showing up in the terminal. If your antenna or reception isn't great, the messages may not decode or may have some garbled output. I fiddled with the squelch and gain in gqrx as well to improve results.
 
 ## Example (Redacted) Transmission
 
