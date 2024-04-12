@@ -1,5 +1,5 @@
 ---
-title: "Decoding Hospital Pagers With An RTL-SDR"
+title: "Decoding Hospital Pagers With an RTL-SDR"
 date: 2024-04-10
 tags: ["SDR"]
 ---
@@ -20,7 +20,7 @@ Despite being unencrypted and easy to decode, these pager systems are still fair
 
 To get started, you need to identify a frequency with local pager traffic to decode. These can vary based on your location, but the 929-932MHz range is commonly used. I found success at 929.616MHz. I utilized a cheap [RTL-SDR](https://www.rtl-sdr.com/buy-rtl-sdr-dvb-t-dongles/) for this, and [gqrx](https://www.gqrx.dk/) to identify and find pager transmissions.
 
-![Pager Transmission](security/sdr-pagers/gqrx-pager.png)
+![Pager Transmission](security/sdr-decoding-pagers/gqrx-pager.png)
 
 Modern pagers commonly use either the FLEX or POCSAG protocols for transmission, all of the local transmissions I was able to find utilized FLEX. The [Signal Identification Wiki](https://www.sigidwiki.com/wiki/FLEX) is a super helpful resource for figuring out what you're looking at, and pagers have a fairly characteristic audio that's easy enough to pick out.
 
@@ -28,7 +28,7 @@ Modern pagers commonly use either the FLEX or POCSAG protocols for transmission,
 
 Once you've identified a valid POCSAG or FLEX pager transmission, we need to pipe the output into audio processing and decoding tools. In GQRX click the UDP button in the bottom right-hand corner; this will send the data from gqrx to port 7355 for use with CLI utilities.
 
-![Gqrx UDP Button](security/sdr-pagers/gqrx-UDP-button.png)
+![Gqrx UDP Button](security/sdr-decoding-pagers/gqrx-UDP-button.png)
 
 We're going to pipe this data into sox, and multimon-ng to perform audio processing and subsequently decode the data using the following command:
 
