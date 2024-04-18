@@ -35,8 +35,8 @@ mainSections = ["projects", "posts", "photo"]
 
 [article]
   showDate = true
-  showViews = false
-  #showLikes = true
+  showViews = true
+  showLikes = true
   showDateUpdated = false
   showAuthor = false
   showBreadcrumbs = true
@@ -68,13 +68,13 @@ mainSections = ["projects", "posts", "photo"]
   showTermCount = true
 
 [firebase]
-  # apiKey = "XXXXXX"
-  # authDomain = "XXXXXX"
-  # projectId = "XXXXXX"
-  # storageBucket = "XXXXXX"
-  # messagingSenderId = "XXXXXX"
-  # appId = "XXXXXX"
-  # measurementId = "XXXXXX"
+  apiKey = "AIzaSyCo2aGTMQjIMxbAa9Xy3nWHmdQxxwxaU98"
+  # authDomain = "hugo-portfolio-site.firebaseapp.com"
+  # projectId = "hugo-portfolio-site"
+  # storageBucket = "hugo-portfolio-site.appspot.com"
+  # messagingSenderId = "209448175700"
+  # appId = "1:209448175700:web:088004d90283d7d90785c1"
+  # measurementId = "G-1S9JC45ZKT"
 
 [fathomAnalytics]
   # site = "ABC12345"
