@@ -3,6 +3,8 @@ title: "Creating a Hugo Site"
 description: "The process I used to create my portfolio site"
 date: 2023-08-29
 tags: ["Web", "Hugo"]
+showDateUpdated: true
+dateUpdated: 2024-04-18
 ---
 This post will serve as a brief overview of why I chose to create a portfolio site, and how to create your own with zero hardware and a relatively low barrier to entry. I created my site using [Hugo](https://gohugo.io/), and the [Blowfish Theme](https://blowfish.page/). I'll be providing any resources I utilized, but will not be providing step-by-step instructions on configuration. My end goal with this project was to have a centralized platform to stand out when applying to jobs and internships by showcasing my projects and interests as well as coursework. As a student, this is an extremely helpful tool to show initiative and commitment to the field outside of the classroom, and I've found it to be an engaging low-stress project to work on.
 
@@ -61,6 +63,8 @@ The only part of this project with any cost attached is purchasing a domain, I c
 
 Cloudflare Pages provides an easy and flexible way to deploy a Hugo site to the internet. From the Cloudflare dashboard, navigate to `Workers & Pages`, and create an application. Select `Pages`, and `Connect to Git`:
 
+### Production Deployment
+
 ![Cloudflare Create an Application Page](development/hugo/cloudflare-init-page.png)
 
 Connect your GitHub account, and select the repo you created with your Hugo site in it. Select the main branch, and Hugo as your framework. Set the build command to `hugo --gc --minify` and add a new environment variable `HUGO_VERSION` with a value of `0.104.2`. The final deployment should look something like this:
@@ -71,4 +75,11 @@ Next, navigate to `Custom Domains` under your page, and add your domain. This wi
 
 ![Custom Domain](development/hugo/custom-domain.png)
 
-YIPPEE! You've done it. Every time you push to the main branch of your GitHub repository, Cloudflare Pages will automatically build and deploy your site on your domain!
+YIPPEE, all changes to the main branch of your GitHub repo will now be deployed to the configured domain.
+
+### Preview Deployments
+
+Preview deployments allow you to have secondary deployments of your CF Pages App. This allows you to configure specific branches of your GitHub repo to be deployed on a different url than your production branch ex. `[Commit Hash].[Projecct Name].pages.dev`.
+
+## Workflow
+
