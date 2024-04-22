@@ -3,8 +3,6 @@ title: "Creating a Hugo Site"
 description: "The process I used to create my portfolio site"
 date: 2023-08-29
 tags: ["Web", "Hugo"]
-showDateUpdated: true
-dateUpdated: 2024-04-18
 ---
 This post will serve as a brief overview of why I chose to create a portfolio site, and how to create your own with zero hardware and a relatively low barrier to entry. I created my site using [Hugo](https://gohugo.io/), and the [Blowfish Theme](https://blowfish.page/). I'll be providing any resources I utilized, but will not be providing step-by-step instructions on configuration. My end goal with this project was to have a centralized platform to stand out when applying to jobs and internships by showcasing my projects and interests as well as coursework. As a student, this is an extremely helpful tool to show initiative and commitment to the field outside of the classroom, and I've found it to be an engaging low-stress project to work on.
 
@@ -79,7 +77,18 @@ YIPPEE, all changes to the main branch of your GitHub repo will now be deployed 
 
 ### Preview Deployments
 
-Preview deployments allow you to have secondary deployments of your CF Pages App. This allows you to configure specific branches of your GitHub repo to be deployed on a different url than your production branch ex. `[Commit Hash].[Projecct Name].pages.dev`.
+Preview deployments allow you to have secondary deployments of your CF Pages App. This allows you to configure specific branches of your GitHub repo to be deployed on a different url than your production branch ex. `[Commit Hash].[Projecct Name].pages.dev`. This is great for testing purposes, and allows you to see your changes in a real environment before pushing it to your main site.
+
+![Preview Branches](development/hugo/preview-branches.png)
+
+I have mine configured so that branches fitting the pattern `(.*-dev)|(dev-.*)` so that all branches beginning or ending with the `-dev` prefix/suffix are deployed as preview branches. If you want to take an extra step, you can use Cloudflare Zero Trust to restrict access to your preview deployments so that people aren't stumbling across your works in progress.
+
+![Access Policy](development/hugo/zero-trust.png)
 
 ## Workflow
 
+1. Locally develop content
+2. Test it with `hugo server` locally
+3. Deploy to a `-dev` branch
+4. Check the Cloudflare preview deployment
+5. Restart if issues are present, deploy to main if not
