@@ -61,6 +61,8 @@ The only part of this project with any cost attached is purchasing a domain, I c
 
 Cloudflare Pages provides an easy and flexible way to deploy a Hugo site to the internet. From the Cloudflare dashboard, navigate to `Workers & Pages`, and create an application. Select `Pages`, and `Connect to Git`:
 
+### Production Deployment
+
 ![Cloudflare Create an Application Page](development/hugo/cloudflare-init-page.png)
 
 Connect your GitHub account, and select the repo you created with your Hugo site in it. Select the main branch, and Hugo as your framework. Set the build command to `hugo --gc --minify` and add a new environment variable `HUGO_VERSION` with a value of `0.104.2`. The final deployment should look something like this:
@@ -71,4 +73,22 @@ Next, navigate to `Custom Domains` under your page, and add your domain. This wi
 
 ![Custom Domain](development/hugo/custom-domain.png)
 
-YIPPEE! You've done it. Every time you push to the main branch of your GitHub repository, Cloudflare Pages will automatically build and deploy your site on your domain!
+YIPPEE, all changes to the main branch of your GitHub repo will now be deployed to the configured domain.
+
+### Preview Deployments
+
+Preview deployments allow you to have secondary deployments of your CF Pages App. This allows you to configure specific branches of your GitHub repo to be deployed on a different url than your production branch ex. `[Commit Hash].[Projecct Name].pages.dev`. This is great for testing purposes, and allows you to see your changes in a real environment before pushing it to your main site.
+
+![Preview Branches](development/hugo/preview-branches.png)
+
+I have mine configured so that branches fitting the pattern `(.*-dev)|(dev-.*)` so that all branches beginning or ending with the `-dev` prefix/suffix are deployed as preview branches. If you want to take an extra step, you can use Cloudflare Zero Trust to restrict access to your preview deployments so that people aren't stumbling across your works in progress.
+
+![Access Policy](development/hugo/zero-trust.png)
+
+## Workflow
+
+1. Locally develop content
+2. Test it with `hugo server` locally
+3. Deploy to a `-dev` branch
+4. Check the Cloudflare preview deployment
+5. Restart if issues are present, deploy to main if not
