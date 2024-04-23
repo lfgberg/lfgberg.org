@@ -32,8 +32,6 @@ Shortly after the interview, Sam has a follow-up chat with Gavin where she's off
 At this point we were given the opportunity to share our findings and recommendations with Sam, hopefully convincing her to take the appropriate course of action. We outlined our OSINT findings about the company, scam etc. and all the relevant red flags from her interactions with the employer/scammer. Our team concluded that it was in fact a scam (who could've ever seen this coming), and directed same to cease communication and report the scam. Most importantly, we wanted to ensure that Sam didn't share any sensitive PII or payment information with the scammer.
 {{< /timelineItem >}}
 
-{{< /timelineItem >}}
-
 {{< /timeline >}}
 
 ## Deliverables
