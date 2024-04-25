@@ -38,10 +38,16 @@
   weight = 30
 
 [[main]]
+  name = "Development"
+  parent = "Posts"
+  pageRef = "tags/development"
+  weight = 40
+
+[[main]]
   name = "Coursework"
   parent = "Posts"
   pageRef = "tags/coursework"
-  weight = 40
+  weight = 50
 
 [[main]]
   name = "Underwater Photography"
