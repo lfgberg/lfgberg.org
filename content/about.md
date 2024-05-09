@@ -2,6 +2,7 @@
 title: "About Me"
 description: "A little about myself"
 date: 2024-03-19
+showTableOfContents: false
 ---
 
 I'm an integrated M.S. and B.S. Cybersecurity Analytics and Operations Major at Penn State University Park and I expect to graduate in 2025. I'm motivated through self study and enjoy learning and experimenting with new tools. I've found this to be a fun way to document and share my projects and experiences, which has helped further my understanding as well. Apart from cybersecurity, I love SCUBA Diving, reading sci-fi and horror, and playing games like Animal Crossing, Tetris, and Stardew.
