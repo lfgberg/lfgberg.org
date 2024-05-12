@@ -12,7 +12,7 @@ Prompt: `What happened to my traffic??? The pings?!?? They're taking over!!!! Th
 
 We're provided with a pcap with almost exclusively ICMP traffic. After examining a couple, it looked like they contained a base64 payload broken up across the packets. The last one in particular gave it away wiith the charictaristic `==`.
 
-![Base64 Payload](security/swampctf-24/ping-payload.png)
+![Base64 Payload](ping-payload.png)
 
 I cooked up a little python script to fetch the data field from each ICMP packet and output them to a file.
 
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 I tossed the payload into CyberChef, decoded the base64, and downloaded the resulting image which contained the flag, yippee!
 
-![Flag Image](security/swampctf-24/ping-flag.png)
+![Flag Image](ping-flag.png)
 
 ## Easy Pwn - Pwn
 
@@ -85,7 +85,7 @@ if(is_admin == 0){
 
 The code used for the server looks to be vulnerable to a buffer overflow (clearly), due to the use of gets to fill the username buffer. If we provide more input than expected, it'll write a nonzero value to isAdmin and print the flag.
 
-![Super Hard Buffer Overflow](security/swampctf-24/easy-pwn.png)
+![Super Hard Buffer Overflow](easy-pwn.png)
 
 ## Employee Evaluation - Pwn
 
@@ -258,9 +258,9 @@ Then I used awk to cleanup the output `awk -F 'page=' '{print $2}' ./http_get_ur
 
 When the script output wasn't easily read I went back to Wireshark... I realized that you can literally hold the right arrow button and see the flag in ASCII art in Wireshark's data section.
 
-![ASCII Art Flag](security/swampctf-24/c2-ascii.png)
+![ASCII Art Flag](c2-ascii.png)
 
-![ASCII Art Flag](security/swampctf-24/c2-ascii-2.png)
+![ASCII Art Flag](c2-ascii-2.png)
 
 I manually transcribed it and called it a day.
 
@@ -276,7 +276,7 @@ We found out a user account has been compromised on our network. We took a packe
 
 The provided packet capture had a bunch of HTTP traffic which was using NTLM for authentication.
 
-![User NTLM Auth](security/swampctf-24/logon-ntlm-auth.png)
+![User NTLM Auth](logon-ntlm-auth.png)
 
 I only saw 2 users, Administrator, and adamkadaban. Adamkadaban was the popped user.
 
@@ -286,11 +286,11 @@ Prompt: `Great job finding the username! We want to find out the password of the
 
 From the NTLM challenge response authentication seen in the packet capture, we can extract the needed info to get a hash to crack and find the user's password. I was initially looking for the format `[Username]::[Domain Name]:[NTLM Server Challenge]:[NTProofSTR]:[NTLMv2 Response]`.
 
-![Username](security/swampctf-24/logon-user.png)
+![Username](logon-user.png)
 
-![Domain Name, Response, NTProofSTR](security/swampctf-24/logon-ntlm-info.png)
+![Domain Name, Response, NTProofSTR](logon-ntlm-info.png)
 
-![Challenge](security/swampctf-24/logon-ntlm-chall.png)
+![Challenge](logon-ntlm-chall.png)
 
 I got the resulting hash:
 
@@ -304,7 +304,7 @@ We threw a ton at this and it didn't crack. The formatting was in fact wrong. Wh
 adamkadaban:::1fed9e8e0ca470a3:98ebffae0b77865893846dfadb757cfb:0101000000000000801c50dbc266da0188d48d08eff230a80000000002001e0045004300320041004d0041005a002d00450033003300530047004c00380001001e0045004300320041004d0041005a002d00450033003300530047004c00380004001e0045004300320041004d0041005a002d00450033003300530047004c00380003001e0045004300320041004d0041005a002d00450033003300530047004c003800070008005783ebd6c266da010000000000000000
 ```
 
-![Cracked Hash](security/swampctf-24/logon-crack.png)
+![Cracked Hash](logon-crack.png)
 
 ## Off The Hook - Rev
 
@@ -312,7 +312,7 @@ Prompt: `We did some dabbling with apk's, have fun!`
 
 I opened the provided `swamp.apk` with VSCode using the APKTool extension. `CTRL + Shift + P > Open an APK`, will allow you to decompile an APK to java source, edit the app, etc.
 
-![Hook](security/swampctf-24/hook-decompile.png)
+![Hook](hook-decompile.png)
 
 There was an overwhelming amount of source files, and frankly I had no clue what I was looking for. I searched through all the files `swamp` and found `MainActivity.java`.
 
@@ -366,7 +366,7 @@ System.out.println("swampCTF{" + new String(GingerBread.gumdrop(Base64.getDecode
 
 Running this allowed me to get the flag without having to run/compile/deal with the app itself:
 
-![Flag](security/swampctf-24/hook-flag.png)
+![Flag](hook-flag.png)
 
 ## Potion Seller - Web
 
@@ -374,7 +374,7 @@ Prompt: `My potions would kill you, traveler. You cannot handle my potions.`
 
 Browsing to the provided site, we're greeted with a simple JSON output:
 
-![Welcome](security/swampctf-24/potion-homepage.png)
+![Welcome](potion-homepage.png)
 
 We're provided with the source for the server which has a couple notable endpoints.
 
@@ -510,16 +510,16 @@ To get the flag we need to:
 
 First I took out a loan for 101 gold with `http://chals.swampctf.com:64845/borrow?amount=101`.
 
-![Loan](security/swampctf-24/potion-borrow.png)
+![Loan](potion-borrow.png)
 
 Next, I bought the SwampShade potion with `http://chals.swampctf.com:64845/buy?id=4`.
 
-![Buy](security/swampctf-24/potion-buy.png)
+![Buy](potion-buy.png)
 
 Then, I repaid 1 gold, which zeroed out the remaining debt with `http://chals.swampctf.com:64845/repay?amount=1`.
 
-![Repay](security/swampctf-24/potion-repay.png)
+![Repay](potion-repay.png)
 
 Finally, we're able to checkout and get the flag, yippee!
 
-![Checkout](security/swampctf-24/potion-checkout.png)
+![Checkout](potion-checkout.png)

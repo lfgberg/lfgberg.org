@@ -6,7 +6,7 @@ tags: ["Writeup", "Competitions", "LaTeX", "Social Engineering"]
 
 I recently competed in Temple University's [Social Engineering Competition](https://sites.temple.edu/socialengineering/) for the first time, along with some other [CCSO](https://psuccso.org) members. We were able to take first place, with our B team placing 3rd! This competition is run by the [CARE Lab](https://sites.temple.edu/care/) at Temple, and this year's theme was employment and tax scams. The competition format was pretty different than anything I'd done in the past and had us meeting with a client and helping her through a potential employment scam.
 
-![2024 Winners](security/temple-sectf24-winners.png)
+![2024 Winners](featured.png)
 
 Overall this was a great opportunity to learn more about social engineering and common scams, and I'm really happy with the final product my team and I were able to deliver. I also decided to take this as an opportunity to learn LaTeX as I move into graduate school, so I've provided a repo with our full code and deliverables as well.
 
