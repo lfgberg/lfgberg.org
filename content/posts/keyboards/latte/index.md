@@ -8,7 +8,7 @@ tags: ["Keyboards", "QMK", "PCB Design", "KiCad"]
 **Warning!** This PCB Hasn't been produced and tested, do so at your own risk!
 {{< /alert >}}
 
-![PCB front](content/posts/keyboards/latte/featured.png "Front of the PCB")
+![PCB front](featured.png "Front of the PCB")
 ![PCB back](latte-back.png "Back of the PCB")
 ![Supported layouts](latte-layouts.png "Supported layouts")
 

@@ -3,7 +3,7 @@ title: "VulnLab - Sync Writeup"
 date: 2023-11-29
 tags: ["Vulnlab", "Writeup"]
 ---
-![Sync Thumbnail](content/posts/vulnlab/vl-sync/featured.png)
+![Sync Thumbnail](featured.png)
 
 This is a write-up of the Sync machine on [VulnLab](https://www.vulnlab.com/) by xct. This box involves anonymous rsync, cracking salted md5 hashes, and manipulating a backup script.
 

@@ -3,7 +3,7 @@ title: "VulnLab - Baby Writeup"
 date: 2023-11-22
 tags: ["Vulnlab", "Writeup", "AD"]
 ---
-![Baby Thumbnail](content/posts/vulnlab/vl-baby/featured.png)
+![Baby Thumbnail](featured.png)
 
 This is a write-up of the Baby machine on [VulnLab](https://www.vulnlab.com/) by xct. This box deals with anonymous LDAP enumeration, and exploitation of the SeBackupPrivilege to exfiltrate and crack user hashes.
 
