@@ -1,0 +1,10 @@
+{
+  "imageNamePattern": "{{fileName}}-paste-{{DATE:YYYY-MM-DD}}",
+  "dupNumberAtStart": false,
+  "dupNumberDelimiter": "-id",
+  "dupNumberAlways": true,
+  "autoRename": true,
+  "handleAllAttachments": true,
+  "excludeExtensionPattern": "pdf",
+  "disableRenameNotice": true
+}
