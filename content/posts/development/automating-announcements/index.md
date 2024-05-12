@@ -22,22 +22,22 @@ When creating a workflow, PowerAutomate provides a couple of different choices f
 
 The Sunday night reminder flow is fairly simple, it's set up to run every Sunday afternoon for the semester and sends a reminder from our club email to all of the Exec Board members to place all of their announcements in the Scrum Board.
 
-![Reminder Flow](development/automating-announcements/reminder-flow.png "Reminder Workflow")
+![Reminder Flow](reminder-flow.png "Reminder Workflow")
 
 ### Announcements Workflow
 
 For the announcements workflow, the first thing is to aggregate a list of all the things to announce from the club's Sharepoint Page. I created 3 different buckets on a planner to sort announcements into either meeting reminders, other events, or WIP. Anything placed in the WIP Bucket will not be sent in the email, it'll instead serve as a place for drafts or reminders about formatting.
 
-![Announcements Planner](development/automating-announcements/scrum-board.png "Sharepoint Announcements Planner")
+![Announcements Planner](scrum-board.png "Sharepoint Announcements Planner")
 
 After listing the tasks from the announcements planner, I created a series of conditionals to append the task's title and description to an array of the appropriate category (meeting reminders or events), filtering by bucketID.
 
-![Building our lists](development/automating-announcements/conditionals.png "Conditionals to filter tasks and build out our arrays")
+![Building our lists](conditionals.png "Conditionals to filter tasks and build out our arrays")
 
 With the arrays populated and joined, I created an email template that would display them in a bulleted format, this draft email is sent to club officers before a final approval process is started.
 
-![Email Draft](development/automating-announcements/email-template.png "Email draft template")
+![Email Draft](email-template.png "Email draft template")
 
 Lastly, before the final email is sent to the mailing list, one of the officers must approve the draft email. All the officers are sent an approval request via email, whoever approves/rejects it first either causes the email to get sent to the mailing list or be rejected for editing.
 
-![Approval](development/automating-announcements/approval.png "Approval and final conditional")
+![Approval](approval.png "Approval and final conditional")

@@ -11,11 +11,9 @@
             "id": "993aca140ad07b4a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "content/posts/competitions/deloitte-24.md",
-                "mode": "source",
-                "source": false
+                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/competitions/deloitte-24.md",
+                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/competitions/deloitte-24.md",
+                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/competitions/deloitte-24.md"
+                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png"
               }
             }
           }
@@ -148,20 +146,48 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "993aca140ad07b4a",
+  "active": "63629329a68d57bd",
   "lastOpenFiles": [
-    "content/posts/competitions/swamp-ctf-24.md",
-    "content/posts/competitions/temple-sectf-24.md",
-    "content/posts/competitions/cfc-22.md",
-    "content/posts/competitions/deloitte-24.md",
+    "content/posts/competitions/swamp-ctf-24/index.md",
+    "content/posts/competitions/deloitte-24/index.md",
+    "content/posts/competitions/swamp-ctf-24",
+    "content/posts/competitions/deloitte-24/featured.jpg",
+    "content/posts/competitions/deloitte-24/team-brief.JPG",
+    "content/posts/competitions/deloitte-24/admin-panel.png",
+    "content/posts/competitions/deloitte-24",
+    "content/posts/competitions/cfc-22/index.md",
+    "content/posts/competitions/cfc-22/featured.png",
+    "content/posts/competitions/temple-sectf-24/index.md",
+    "content/posts/competitions/cfc-22",
+    "content/posts/competitions/temple-sectf-24/featured.png",
+    "content/posts/vulnlab/vl-sync/featured.png",
+    "content/posts/competitions/temple-sectf-24",
+    "content/posts/vulnlab/vl-sync/backup-contents.png",
+    "content/posts/vulnlab/vl-sync/index.md",
+    "content/posts/vulnlab/vl-baby/index.md",
+    "content/posts/vulnlab/vl-baby/featured.png",
+    "content/posts/vulnlab/vl-baby/cme-smb-passwd-spray.png",
+    "content/posts/vulnlab/vl-sync",
+    "content/posts/vulnlab/vl-baby",
+    "content/posts/sdr-decoding-pagers/index.md",
+    "content/posts/vulnlab",
+    "content/posts/sdr-decoding-pagers/gqrx-pager.png",
+    "content/posts/cloud-c2/index.md",
+    "content/posts/sdr-decoding-pagers",
+    "content/posts/cloud-c2",
+    "content/posts/keyboards/maya/index.md",
+    "content/posts/keyboards/why/index.md",
+    "content/posts/keyboards/latte/index.md",
+    "content/posts/keyboards/dadboard/index.md",
+    "content/posts/development/hugo/index.md",
+    "content/posts/development/automating-announcements/index.md",
+    "content/posts/development/hugo",
+    "content/posts/development/Untitled.md",
+    "content/posts/development/nookphone/index.md",
     "config/obsidian-templates/hugo_frontmatter.md",
-    "config/obsidian-templates",
     "content/posts/competitions/Untitled.md",
     "content/posts/competitions/Erm.md",
     "config/templates/hugo_frontmatter.md",
-    "config/templates/hugo_frontmatter",
-    "config/templates/Untitled.md",
-    "config/templates",
-    "content/Untitled"
+    "config/templates/Untitled.md"
   ]
 }

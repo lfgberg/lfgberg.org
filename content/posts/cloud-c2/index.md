@@ -6,7 +6,7 @@ tags: ["C2"]
 
 After repeatedly spinning up short-term Sliver C2 servers for various red team lab/club engagements, I decided to set up my own for future use. I chose to leverage [Oracle Cloud's Free Tier](https://www.oracle.com/cloud/free/), it's extremely easy to set up and access and Oracle provides multiple free VMs at no charge. My goal with this project was to spin up a free solution that would host a [Sliver C2](https://github.com/BishopFox/sliver) server, and hide all implant traffic behind a legitimate website.
 
-![Network Diagram](security/cloud-c2/network-diagram.png)
+![Network Diagram](network-diagram.png)
 
 I'll be explaining how to deploy two servers on Oracle Cloud, one of which will host the Sliver C2 server, and the second of which will hide the server behind a legitimate website. The Nginx server will filter traffic according to a specific website path and user agent, sending C2 traffic from implants to the Sliver server and rerouting all other traffic to a normal website.
 
@@ -22,17 +22,17 @@ It's extremely helpful to upgrade your account to a pay-as-you-go account under 
 
 Create 2 Instances to serve as the C2 and redirector servers. Change the image and shape to Ubuntu/VM.Standard.A1.Flex W/2 CPUs 12GB Memory, 2Gbps bandwidth.
 
-![Image and Shape](security/cloud-c2/image-shape.png)
+![Image and Shape](image-shape.png)
 
 Ensure both instances are on the same virtual cloud network, and upload your SSH public key files so that you're able to access the machines.
 
-![SSH Key Upload](security/cloud-c2/ssh.png)
+![SSH Key Upload](ssh.png)
 
 ### Ingress Rules
 
 Browse to `Networking > Virtual Cloud Networks > [Your Network Name] > Public Subnet > Security List Details`. Add ingress rules to allow traffic on ports 22, 80, 443, and a port for sliver communication. This will ensure our sliver client, implants, etc. will be able to communicate.
 
-![Ingress Rules](security/cloud-c2/ingress-rules.png)
+![Ingress Rules](ingress-rules.png)
 
 ## Configuration
 
@@ -40,7 +40,7 @@ Browse to `Networking > Virtual Cloud Networks > [Your Network Name] > Public Su
 
 I utilize Cloudflare for my domain/DNS management, but the process should be relatively similar if you use a different service. From the Cloudflare dashboard, I created a new DNS record pointing `api.websitename.com` at the public IP of the Oracle Nginx server. For all future configurations, I'll use `api.websitename.com`, change this to match your domain name and chosen subdomain.
 
-![Cloudflare DNS Record](security/cloud-c2/cloudflare.png)
+![Cloudflare DNS Record](cloudflare.png)
 
 This will also proxy all implant traffic through Cloudflare, and won't expose the location of the Redirector or Sliver Server, all of the implants will call out to a specific path on `api.websitename.com`.
 
@@ -56,7 +56,7 @@ SSH into the Sliver server using the public IP provided by Oracle, the following
 
 I had some trouble with the default firewall rules implemented by Oracle Cloud, so I flushed them with `iptables -F`, and installed ufw to configure the rules. With ufw, run `ufw allow [22, Sliver port]` and `ufw allow from [nginx private ip] proto tcp to any port [80, 443]`. This should allow SSH and Sliver traffic from any host, and implants to communicate from the nginx redirector.
 
-![Sliver Server UFW Rules](security/cloud-c2/sliver-ufw.png)
+![Sliver Server UFW Rules](sliver-ufw.png)
 
 #### Installing Sliver
 
@@ -93,15 +93,15 @@ WantedBy=multi-user.target
 
 Next, run `systemctl enable sliver` and `systemctl start sliver`, sliver should now be running on the port you configured. This can be verified with `systemctl status sliver`.
 
-![Sliver Status](security/cloud-c2/sliver-status.png)
+![Sliver Status](sliver-status.png)
 
 Next, generate an operator config to connect to the Sliver server. This can be done by running `sliver-server operator --name [name] --lhost [pub ip] --save [name].cfg --lport [sliver port]`. Copy this file to the host you'd like to use as a Sliver client, and drop it in `/home/[user]/.sliver-client/configs`. Test that you're able to connect with the `sliver` command. If this doesn't work; there's likely an issue with either your firewall configuration, or Oracle Cloud ingress rules.
 
-![Successful Sliver Connection](security/cloud-c2/sliver-connection.png)
+![Successful Sliver Connection](sliver-connection.png)
 
 From the Sliver console, we need to start some listeners for the implants to communicate with. Run `https -p` and `http -p` to start persistent HTTP(s) listeners. If you run `jobs` you should see the two listeners present.
 
-![Sliver Jobs](security/cloud-c2/sliver-listeners.png)
+![Sliver Jobs](sliver-listeners.png)
 
 Now there should be a `/root/.sliver/configs/http-c2.json` file on the Sliver server, this dictates how implants will communicate. We're going to edit the `user-agent` string to be a custom value. The user agent is the string identifying the web client making a request, ex. `Chrome/5.0 (erm; Windows 11; super legit user agent string)`, we'll use this custom value later when configuring the redirector. Save the config file and reload Sliver with `systemctl reload sliver`
 
@@ -220,4 +220,4 @@ Upon normal browsing, the API subdomain looks innocuous, but implant traffic wil
 
 Run the previously generated implant on a test machine; if everything worked, you should see a session pop from your sliver client!
 
-![Session](security/cloud-c2/session.png)
+![Session](session.png)

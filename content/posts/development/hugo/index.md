@@ -63,15 +63,15 @@ Cloudflare Pages provides an easy and flexible way to deploy a Hugo site to the 
 
 ### Production Deployment
 
-![Cloudflare Create an Application Page](development/hugo/cloudflare-init-page.png)
+![Cloudflare Create an Application Page](cloudflare-init-page.png)
 
 Connect your GitHub account, and select the repo you created with your Hugo site in it. Select the main branch, and Hugo as your framework. Set the build command to `hugo --gc --minify` and add a new environment variable `HUGO_VERSION` with a value of `0.104.2`. The final deployment should look something like this:
 
-![Pages Deployment](development/hugo/cloudflare-deployment.png)
+![Pages Deployment](cloudflare-deployment.png)
 
 Next, navigate to `Custom Domains` under your page, and add your domain. This will make it so your content is served on the appropriate URL:
 
-![Custom Domain](development/hugo/custom-domain.png)
+![Custom Domain](custom-domain.png)
 
 YIPPEE, all changes to the main branch of your GitHub repo will now be deployed to the configured domain.
 
@@ -79,11 +79,11 @@ YIPPEE, all changes to the main branch of your GitHub repo will now be deployed 
 
 Preview deployments allow you to have secondary deployments of your CF Pages App. This allows you to configure specific branches of your GitHub repo to be deployed on a different url than your production branch ex. `[Commit Hash].[Projecct Name].pages.dev`. This is great for testing purposes, and allows you to see your changes in a real environment before pushing it to your main site.
 
-![Preview Branches](development/hugo/preview-branches.png)
+![Preview Branches](preview-branches.png)
 
 I have mine configured so that branches fitting the pattern `(.*-dev)|(dev-.*)` so that all branches beginning or ending with the `-dev` prefix/suffix are deployed as preview branches. If you want to take an extra step, you can use Cloudflare Zero Trust to restrict access to your preview deployments so that people aren't stumbling across your works in progress.
 
-![Access Policy](development/hugo/zero-trust.png)
+![Access Policy](zero-trust.png)
 
 ## Workflow
 

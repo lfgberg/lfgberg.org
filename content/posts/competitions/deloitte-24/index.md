@@ -4,13 +4,13 @@ date: 2024-02-17
 tags: ["CTF", "Writeup", "Competitions"]
 ---
 
-![Victory Photo; RAHHHHHHHH](security/dctc-24/victory.JPG)
+![Victory Photo; RAHHHHHHHH](content/posts/competitions/deloitte-24/featured.jpg)
 
 I recently participated in Deloitte's Cyber Threat Competition for the first time, placing second. The competition consisted of two rounds: round 1 had a security questionnaire and CTF, and round 2 had another brief CTF as well as an incident response wargame and presentation portion. The top 2 students from each school and other high-scoring participants moved on to round two where teams were randomly assigned across universities.
 
 Overall this was a great opportunity to go out of my comfort zone and focus more on the business aspects of cybersecurity, I really enjoyed working with my teammates and getting to travel to Deloitte University. I've detailed the CTF challenges from round 1, as well as the IR scenario from round 2.
 
-![Team 8](security/dctc-24/team-8.JPG)
+![Team 8](team-8.JPG)
 
 ## Round 1 - CTF
 
@@ -20,11 +20,11 @@ Challenge: `There is a flag hidden on the web page of this challenge`
 
 Browsing to the site provides us with a relatively blank page:
 
-![Website](security/dctc-24/intro-site.png)
+![Website](intro-site.png)
 
 If we view the page source, there's a series of br elements padding the page, with taunting comments. The flag is in a comment at the end of the page:
 
-![Flag](security/dctc-24/inspect-element-flag.png)
+![Flag](inspect-element-flag.png)
 
 ### Weak Crypto
 
@@ -40,16 +40,16 @@ Can you verify that our fix is effective?
 
 Browsing to the page provides us with a disabled login form and a link to the route /api/user which we can use to verify the currently logged-in user:
 
-![Admin Panel](security/dctc-24/admin-panel.png)
-![/api/user](security/dctc-24/api-user.png)
+![Admin Panel](admin-panel.png)
+![/api/user](api-user.png)
 
 Looking at the cookies reveals that the site stores a session token, which is a base64 encoded JWT token:
 
-![Session Token](security/dctc-24/session-token.png)
+![Session Token](session-token.png)
 
 Based on the challenge title, we can assume they don't perform any validation etc. on the session token. Decoding the the token presents us with the value `{"user": "anonymous"}`, to get the flag, change the value to `{"user": "administrator"}`, and replace the current session with your new token. Browsing to api/user shows that we're authenticated as the administrator, and presents us with the flag:
 
-![Flag](security/dctc-24/token-flag.png)
+![Flag](token-flag.png)
 
 ### Default Administrator Password
 
@@ -57,11 +57,11 @@ Challenge: `It seems that someone forgot to change their vendor default password
 
 We're presented with an Apache Geronimo login page:
 
-![Geronimo Login](security/dctc-24/geronimo-login.png)
+![Geronimo Login](geronimo-login.png)
 
 A quick search reveals that the default creds are `system/manager`, and logging in presents us with the flag:
 
-![Flag](security/dctc-24/geronimo-flag.png)
+![Flag](geronimo-flag.png)
 
 ### Call an Ambulance
 
@@ -83,8 +83,8 @@ An Nmap scan of the host reveals the following open port (utilize `-p-` to find 
 
 The challenge name, as well as service versions, seem to indicate that this server is vulnerable to heartbleed, a vulnerability in OpenSSL that allows an attacker to gain access to portions of memory that should be restricted. Using the `scanner/ssl/openssl_heartbleed` module in metasploit, with `verbose` set to `true`, we can see the flag exposed in the server's response to our request:
 
-![msf Options](security/dctc-24/msf-options.png)
-![Heartbleed Output](security/dctc-24/heartbleed-output.png)
+![msf Options](msf-options.png)
+![Heartbleed Output](heartbleed-output.png)
 
 ### Evil Eval
 
@@ -92,12 +92,12 @@ Challenge: `Allowing users to eval() JavaScript should be fine right?`
 
 Browsing to the site we're presented with an input field to have our code evaluated, entering basic expressions like `1===1` results in a success, but more complex requests that use other functions like `alert("test")` get blocked. Successful eval requests don't result in any visual or console output.
 
-![Eval Page](security/dctc-24/eval.png)
+![Eval Page](eval.png)
 
 After doing some more investigation, using `html += CODE` will append the result of our evaluated code to the page, and we can utilize `require("child_process").execSync('COMMAND').toString()` will run bash commands on the system. We can use `html += require("child_process").execSync('find / --name flag*').toString();` to search the file system for a file with flag in the name, and `html += require("child_process").execSync('cat /src/flag.txt').toString();` to find the flag:
 
-![ls Output](security/dctc-24/ls-eval.png)
-![Flag](security/dctc-24/eval-flag.png)
+![ls Output](ls-eval.png)
+![Flag](eval-flag.png)
 
 ### Simple Nslookup Tool V2
 
@@ -111,16 +111,16 @@ Can you test version 2 for me and make sure it is not possible to call any other
 
 Browsing to the site we're presented with an input field to have our query evaluated, and the output is presented in a field below:
 
-![nslookup](security/dctc-24/nslookup.png)
+![nslookup](nslookup.png)
 
 Although they block common execution tricks like `(;&$><\!)`, they don't block `|`. We can input any query followed by a pipe and arbitrarily execute commands. A quick ls reveals `flag.txt` in the directory:
 
-![ls Output](security/dctc-24/nslookup-ls.png)
-![Flag](security/dctc-24/nslookup-flag.png)
+![ls Output](nslookup-ls.png)
+![Flag](nslookup-flag.png)
 
 ## Round 2
 
-![Team Introductions](security/dctc-24/team-brief.JPG)
+![Team Introductions](team-brief.JPG)
 
 ### Wargame
 
@@ -156,7 +156,7 @@ This realistic scenario was fun and engaging to work through, during the exercis
 
 ### Brief
 
-![Yappin Away](security/dctc-24/yappin.JPG)
+![Yappin Away](yappin.JPG)
 
 After the wargame, teams had 3 hours to prepare a brief for GDD's C-Suite Executives to update them on the recent attack. We weren't able to bring any materials from the wargame out of the room, so detailed note-taking was critical to have all the information.
 
