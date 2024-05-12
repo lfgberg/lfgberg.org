@@ -4,7 +4,7 @@ date: 2024-02-17
 tags: ["CTF", "Writeup", "Competitions"]
 ---
 
-![Victory Photo; RAHHHHHHHH](content/posts/competitions/deloitte-24/featured.jpg)
+![Victory Photo; RAHHHHHHHH](featured.jpg)
 
 I recently participated in Deloitte's Cyber Threat Competition for the first time, placing second. The competition consisted of two rounds: round 1 had a security questionnaire and CTF, and round 2 had another brief CTF as well as an incident response wargame and presentation portion. The top 2 students from each school and other high-scoring participants moved on to round two where teams were randomly assigned across universities.
 
