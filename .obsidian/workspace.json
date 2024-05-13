@@ -11,9 +11,11 @@
             "id": "993aca140ad07b4a",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png"
+                "file": "content/posts/competitions/cfc-cth-24/index.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png",
+                "file": "content/posts/competitions/cfc-cth-24/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png",
+                "file": "content/posts/competitions/cfc-cth-24/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/competitions/swamp-ctf-24/c2-ascii.png"
+                "file": "content/posts/competitions/cfc-cth-24/index.md"
               }
             }
           }
@@ -146,32 +148,44 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "63629329a68d57bd",
+  "active": "993aca140ad07b4a",
   "lastOpenFiles": [
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-11.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-10.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-9.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-8.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-7.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-6.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-5.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-4.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-3.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-13-1.png",
+    "content/posts/competitions/cfc-cth-24/cfc-cth-24-paste-2024-05-12-4.png",
+    "content/posts/competitions/cfc-cth-24/index.md",
+    "().md",
+    "config/obsidian-templates/hugo_frontmatter.md",
+    "content/posts/competitions/cfc-22/index.md",
+    "content/photo/roatan-21/index.md",
+    "content/posts/competitions/cfc-cth-24",
+    "content/photo/roatan-19/index.md",
+    "content/photo/czm-8-23/index.md",
+    "content/photo/czm-8-22/index.md",
+    "content/photo/czm-8-20/index.md",
+    "content/photo/beaufort-7-23/index.md",
+    "content/photo/czm-2-21/index.md",
     "content/posts/competitions/swamp-ctf-24/index.md",
     "content/posts/competitions/deloitte-24/index.md",
     "content/posts/competitions/swamp-ctf-24",
-    "content/posts/competitions/deloitte-24/featured.jpg",
-    "content/posts/competitions/deloitte-24/team-brief.JPG",
-    "content/posts/competitions/deloitte-24/admin-panel.png",
     "content/posts/competitions/deloitte-24",
-    "content/posts/competitions/cfc-22/index.md",
-    "content/posts/competitions/cfc-22/featured.png",
     "content/posts/competitions/temple-sectf-24/index.md",
     "content/posts/competitions/cfc-22",
-    "content/posts/competitions/temple-sectf-24/featured.png",
-    "content/posts/vulnlab/vl-sync/featured.png",
     "content/posts/competitions/temple-sectf-24",
-    "content/posts/vulnlab/vl-sync/backup-contents.png",
     "content/posts/vulnlab/vl-sync/index.md",
     "content/posts/vulnlab/vl-baby/index.md",
-    "content/posts/vulnlab/vl-baby/featured.png",
-    "content/posts/vulnlab/vl-baby/cme-smb-passwd-spray.png",
     "content/posts/vulnlab/vl-sync",
     "content/posts/vulnlab/vl-baby",
     "content/posts/sdr-decoding-pagers/index.md",
     "content/posts/vulnlab",
-    "content/posts/sdr-decoding-pagers/gqrx-pager.png",
     "content/posts/cloud-c2/index.md",
     "content/posts/sdr-decoding-pagers",
     "content/posts/cloud-c2",
@@ -181,13 +195,6 @@
     "content/posts/keyboards/dadboard/index.md",
     "content/posts/development/hugo/index.md",
     "content/posts/development/automating-announcements/index.md",
-    "content/posts/development/hugo",
-    "content/posts/development/Untitled.md",
-    "content/posts/development/nookphone/index.md",
-    "config/obsidian-templates/hugo_frontmatter.md",
-    "content/posts/competitions/Untitled.md",
-    "content/posts/competitions/Erm.md",
-    "config/templates/hugo_frontmatter.md",
-    "config/templates/Untitled.md"
+    "content/posts/development/Untitled.md"
   ]
 }

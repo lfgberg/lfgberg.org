@@ -1,7 +1,7 @@
 {
-  "imageNamePattern": "{{fileName}}-paste-{{DATE:YYYY-MM-DD}}",
+  "imageNamePattern": "{{imageNameKey}}-paste-{{DATE:YYYY-MM-DD}}",
   "dupNumberAtStart": false,
-  "dupNumberDelimiter": "-id",
+  "dupNumberDelimiter": "-",
   "dupNumberAlways": true,
   "autoRename": true,
   "handleAllAttachments": true,
