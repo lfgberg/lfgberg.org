@@ -137,12 +137,13 @@ The first attempt *did* trigger a snort rule, so the second IP of **203.0.113.15
 
 Prompt:
 
-`!!!THIS IS EXTREMELY IMPORTANT!! COMPETITORS: DO NOT DUMP THE PROCESS. THIS IS MALWARE!!!`
-`
-`Memory Forensics is a field of study that takes a volatile snapshot of a system (typically RAM) and tries to peace together what has occurred. In this instance, a snapshot titled ‘CyberForce-VM-Infected-5’ was taken of an infected system. Hidden inside is a malware process.
+```text
+!!!THIS IS EXTREMELY IMPORTANT!! COMPETITORS: DO NOT DUMP THE PROCESS. THIS IS MALWARE!!!
 
-`Use Volatility on the system to identify the malware process and its’ PID. You can run volatility by running vol.py in the Volatility3 folder.`
+Memory Forensics is a field of study that takes a volatile snapshot of a system (typically RAM) and tries to peace together what has occurred. In this instance, a snapshot titled ‘CyberForce-VM-Infected-5’ was taken of an infected system. Hidden inside is a malware process
 
+Use Volatility on the system to identify the malware process and its’ PID. You can run volatility by running vol.py in the Volatility3 folder.
+```
 
 Sounds like we should dump the process. I booted up the VM and started to investigate the provided image.
 
@@ -371,7 +372,9 @@ Running this gets us the flag `W3L0v3C0ding!`
 
 ## CryptK33per
 
-Prompt: `Solve the cryptopuzzle for full points`
+Prompt: 
+
+`Solve the cryptopuzzle for full points`
 
 We're initially presented with a fun PDF, and a second PDF which is password protected.
 
