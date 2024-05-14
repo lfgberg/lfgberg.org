@@ -31,7 +31,7 @@ I started by investigating the downloads folder and found six entries:
 
 ![Downloads](cfc-cth-24-paste-2024-05-12-2.png)
 
-`smartmeter_management_interface.exe` was downloaded from a google drive link (sus), which was the flag `https://drive.usercontent.google.com/download?id=1BfPZslNaHvz3olaV8_3I6ppA_IbdlHLr&export=download|`.
+`smartmeter_management_interface.exe` was downloaded from a google drive link (sus), which was the flag `https://drive.usercontent.google.com/download?id=1BfPZslNaHvz3olaV8_3I6ppA_IbdlHLr&export=download`.
 
 Part Two:
 
@@ -68,7 +68,7 @@ In the same table, I found the following GitHub Repos:
 * <https://github.com/dylanaraps/neofetch>
 * <https://github.com/tukaani-project/xz>
 
-The recent xzutils backdoor was a fairly big story, and it's CVE is **CVE-2024-3094**.
+The recent xzutils backdoor had **CVE-2024-3094**.
 
 Part Six:
 
@@ -92,19 +92,17 @@ To make it much faster to parse through the logs, I used grep to only look at lo
 
 Part One:
 
-```text
-A recent system misconfiguration caused a bunch of issues and even put the protection systems into monitor-only mode, so malicious web-based traffic was not being blocked to company applications. Additionally, there were even some issues with rule tunings
+`A recent system misconfiguration caused a bunch of issues and even put the protection systems into monitor-only mode, so malicious web-based traffic was not being blocked to company applications. Additionally, there were even some issues with rule tunings`
 
-Identify all IP addresses making malicious requests, comma spaced based on their order of appearance.
-```
+`Identify all IP addresses making malicious requests, comma spaced based on their order of appearance.`
+
 
 This one was pretty straightforward, I took my list of snort-triggered logs and took a list of the IPs in the order they appeared: `203.0.113.157, 198.51.100.152, 203.0.113.135, 203.0.113.146, 198.51.100.141, 192.0.2.143, 192.0.2.154`.
 
 Part Two:
 
-```text
-What is the User Agent associated with a successful attempt (returned a 200) to enable a feature that could be used to exploit the “MeterWise Analytics” application?
-```
+`What is the User Agent associated with a successful attempt (returned a 200) to enable a feature that could be used to exploit the “MeterWise Analytics” application?`
+
 
 From my filtered list of logs I started looking for anything interacting with the MeterWise Analytics application, with a response code of 200. I found the following log:
 
@@ -122,9 +120,8 @@ It's timestamp was **2024-05-01 20:26:14**.
 
 Part Four:
 
-```text
-Identify the IP address that attempted to access sensitive system files through path traversal that did not have a snort rule triggered.
-```
+`Identify the IP address that attempted to access sensitive system files through path traversal that did not have a snort rule triggered.`
+
 
 Sadly the snort list fails us here, tragic stuff. This time I searched for `/..` in a text editor to find attempted directory traversal. I found these two attempts:
 
@@ -140,13 +137,12 @@ The first attempt *did* trigger a snort rule, so the second IP of **203.0.113.15
 
 Prompt:
 
-```text
-!!!THIS IS EXTREMELY IMPORTANT!! COMPETITORS: DO NOT DUMP THE PROCESS. THIS IS MALWARE!!!
+`!!!THIS IS EXTREMELY IMPORTANT!! COMPETITORS: DO NOT DUMP THE PROCESS. THIS IS MALWARE!!!`
+`
+`Memory Forensics is a field of study that takes a volatile snapshot of a system (typically RAM) and tries to peace together what has occurred. In this instance, a snapshot titled ‘CyberForce-VM-Infected-5’ was taken of an infected system. Hidden inside is a malware process.
 
-Memory Forensics is a field of study that takes a volatile snapshot of a system (typically RAM) and tries to peace together what has occurred. In this instance, a snapshot titled ‘CyberForce-VM-Infected-5’ was taken of an infected system. Hidden inside is a malware process.
+`Use Volatility on the system to identify the malware process and its’ PID. You can run volatility by running vol.py in the Volatility3 folder.`
 
-Use Volatility on the system to identify the malware process and its’ PID. You can run volatility by running vol.py in the Volatility3 folder.
-```
 
 Sounds like we should dump the process. I booted up the VM and started to investigate the provided image.
 
@@ -160,15 +156,13 @@ The only process which really jumped out to me was `enbry.exe` which had a PID o
 
 Prompt:
 
-```text
-Our organization's security team has discovered suspicious anomalies in the system logs of a critical network infrastructure. These anomalies suggest potential tampering or manipulation, posing a significant threat to the integrity and security of the network. As a cybersecurity analyst, your task is to investigate the provided system logs, identify evidence of tampering or manipulation, and determine the extent of the threat to the network's security. Your objective is to provide a clear and definitive answer regarding the presence of log tampering and recommend actionable steps to mitigate the risks. 
+`Our organization's security team has discovered suspicious anomalies in the system logs of a critical network infrastructure. These anomalies suggest potential tampering or manipulation, posing a significant threat to the integrity and security of the network. As a cybersecurity analyst, your task is to investigate the provided system logs, identify evidence of tampering or manipulation, and determine the extent of the threat to the network's security. Your objective is to provide a clear and definitive answer regarding the presence of log tampering and recommend actionable steps to mitigate the risks. `
 
 Challenge Objectives:
 
 1. Analyze the provided system logs to identify any indications of tampering or manipulation.
-
 2. If applicable, determine the culprit’s name and enter that into the scoreboard for full points. If no compromise is found, simply type in “null” into the scoreboard for full points.
-```
+
 
 We're given 40 logs entries, I found the following ones to be notable:
 
@@ -345,9 +339,7 @@ I shot from the hip here and correctly guessed **moon**, it was either that or l
 
 Part Three:
 
-```text
-Highlight all the text to find the hidden code within the article. Copy this into a python compiler and enter the message and secret word. The output will be the flag
-```
+`Highlight all the text to find the hidden code within the article. Copy this into a python compiler and enter the message and secret word. The output will be the flag`
 
 I highlighted the hidden text, cleaned it up, and inputted the pieces of info we already had to get the following python code to run:
 
@@ -407,9 +399,7 @@ If you look closely at the rays of the sun, there's morse code to transcribe, yi
 
 This took me a while, but I got the following phrase which was the flag:
 
-```text
-YET KNOWING HOW WAY LEADS ON TO WAY, I DOUBTED IF I SHOULD EVER COME BACK. I TOOK THE ONE LESS TRAVELED BY, AND THAT HAS MADE ALL THE DIFFERENCE
-```
+`YET KNOWING HOW WAY LEADS ON TO WAY, I DOUBTED IF I SHOULD EVER COME BACK. I TOOK THE ONE LESS TRAVELED BY, AND THAT HAS MADE ALL THE DIFFERENCE`
 
 This is an excerpt from *The Road Not Taken*, by Robert Frost.
 
