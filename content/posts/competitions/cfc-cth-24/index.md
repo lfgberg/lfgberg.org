@@ -8,17 +8,17 @@ tags:
 imageNameKey: cfc-cth-24
 ---
 
-I recently participated in the DOE's Cyberforce Conquer the Hill CTF, placing TODO out of 139 players. This was my first time participating in one of the individual Cyberforce games, but I've played in the larger event a handful of times and thoroughly enjoyed it. I've detailed most of the challenges I was able to get through, because this competition was only 4 hours long I didn't have as much time as I'd have liked to hit the reverse engineering and harder challenges.
+I recently participated in the DOE's [Cyberforce Conquer the Hill Competition](https://cyberforce.energy.gov/conquer-the-hill/), a jeopardy style CTF, placing 2nd out of TODO players. This was my first time participating in one of the individual Cyberforce games, but I've played in the larger event a handful of times and thoroughly enjoyed it. I've detailed most of the challenges I was able to get through, because this competition was only 4 hours long I didn't have as much time as I'd have liked to hit the reverse engineering and harder challenges.
+
+![Conquer the Hill Logo](featured.png)
 
 ## gURLs Just Want to Have Fun
 
 This challenge provided a large SQL Database representing a user's browser history with a handful of tables, we're tasked with investigating it. I was able to solve all of these questions by poking around with DB Browser for SQLite.
 
-![[cfc-cth-24-paste-2024-05-12-1.png]]
+![DB Tables](cfc-cth-24-paste-2024-05-12-1.png)
 
-### Part One
-
-Prompt:
+Part One:
 
 ```text
 One of your coworkers just got phished and downloaded a rather suspicious file and you’ve got the browser history file available. You need to look for the answers to some questions as they’re out on vacation for the next week.
@@ -28,13 +28,11 @@ Look for a potentially malicious file they likely downloaded. Provide the tab UR
 
 I started by investigating the downloads folder and found six entries:
 
-![[cfc-cth-24-paste-2024-05-12-2.png]]
+![Downloads](cfc-cth-24-paste-2024-05-12-2.png)
 
 `smartmeter_management_interface.exe` was downloaded from a google drive link (sus), which was the flag `https://drive.usercontent.google.com/download?id=1BfPZslNaHvz3olaV8_3I6ppA_IbdlHLr&export=download|`.
 
-### Part Two
-
-Prompt:
+Part Two:
 
 ```text
 While you’re looking at downloads, it looks like there was an image of a quote downloaded. What is that quote?
@@ -42,11 +40,9 @@ While you’re looking at downloads, it looks like there was an image of a quote
 
 Looks like we want the contents of `simonedebeauvoir1-2x.jpg`, the downloaded url just links to [BrainyQuote](https://www.brainyquote.com/quote_of_the_day)'s quote of the day for May 2nd. I searched on the site for Simone De Beauvoir, and downloaded the latest quote with an image, "Change your life today. Don't gamble on the future, act now, without delay."
 
-![[cfc-cth-24-paste-2024-05-12-3.png]]
+![Simone De Beauvoir Quote](cfc-cth-24-paste-2024-05-12-3.png)
 
-### Part Three
-
-Prompt:
+Part Three:
 
 ```text
 They were trying to book flights. What US state is the airport they are flying out of located in?
@@ -54,9 +50,7 @@ They were trying to book flights. What US state is the airport they are flying o
 
 Now we need to switch to look at the urls table to see where the user was browsing. I found the following link: `https://www.southwest.com/air/booking/select-depart.html?int=HOMEQBOMAIR&adultPassengersCount=1&departureDate=2024-05-18&destinationAirportCode=MDW&fareType=USD&originationAirportCode=MHT&passengerType=ADULT&promoCode=&returnDate=2024-05-31&tripType=roundtrip&from=MHT&to=MDW&adultsCount=1&departureTimeOfDay=ALL_DAY&reset=true&returnTimeOfDay=ALL_DAY`, which indicated that they were looking at the MHT Airport out of **New Hampshire**.
 
-### Part Four
-
-Prompt:
+Part Four:
 
 ```text
 In relation to travel, they were looking up weather reports for multiple areas. Provide the name of the town that they visited a URL for outside of google.com or bing.com.
@@ -64,9 +58,7 @@ In relation to travel, they were looking up weather reports for multiple areas. 
 
 Still in the urls table, this visited link indicates that they were looking up the weather in **Shelburne**: `https://weather.com/weather/tenday/l/Shelburne+VT?canonicalCityId=4f34aa1d907e86d210ffae254df28b73fcad23268a5874dd5f07367554a21625`.
 
-### Part Five
-
-Prompt:
+Part Five:
 
 ```text
 One of the GitHub repositories they were looking at recently had a massive issue in early April. What is the corresponding CVE for that vulnerability?
@@ -81,9 +73,7 @@ In the same table, I found the following GitHub Repos:
 
 The recent xzutils backdoor was a fairly big story, and it's CVE is **CVE-2024-3094**.
 
-### Part Six
-
-Prompt:
+Part Six:
 
 ```text
 What was the visit duration value associated with the URL that has the corresponding title eCFR :: 10 CFR Chapter III – Department of Energy"?
@@ -91,9 +81,7 @@ What was the visit duration value associated with the URL that has the correspon
 
 First I investigated the urls table and found that url id 342 linked to <https://www.ecfr.gov/current/title-10/chapter-III>. I was then able to correlate this with the visits table which had the `visit_duration` value we were looking for, id 342 had a duration of `35810787`.
 
-### Part Seven
-
-Prompt:
+Part Seven:
 
 ```text
 At one point they downloaded a picture of a famous painting. However, they browsed pages for at least 2 famous paintings. What was the last name of artist that painted the picture which was NOT downloaded?
@@ -107,9 +95,7 @@ This challenge presented us with a long excerpt of WAF logs generally in the fol
 
 To make it much faster to parse through the logs, I used grep to only look at logs that triggered a snort rule for most of the questions w/ `cat logs.txt | grep SNORT-ALERT`. This took us from 1,000 log entries to look at down to 24.
 
-### Part One
-
-Prompt:
+Part One:
 
 ```text
 A recent system misconfiguration caused a bunch of issues and even put the protection systems into monitor-only mode, so malicious web-based traffic was not being blocked to company applications. Additionally, there were even some issues with rule tunings
@@ -119,9 +105,7 @@ Identify all IP addresses making malicious requests, comma spaced based on their
 
 This one was pretty straightforward, I took my list of snort-triggered logs and took a list of the IPs in the order they appeared: `203.0.113.157, 198.51.100.152, 203.0.113.135, 203.0.113.146, 198.51.100.141, 192.0.2.143, 192.0.2.154`.
 
-### Part Two
-
-Prompt:
+Part Two:
 
 ```text
 What is the User Agent associated with a successful attempt (returned a 200) to enable a feature that could be used to exploit the “MeterWise Analytics” application?
@@ -133,17 +117,15 @@ From my filtered list of logs I started looking for anything interacting with th
 
 Here we see someone enabling debug mode, and their user agent is **ThreatSeeker/2.1**.
 
-### Part Three
+Part Three:
 
-Prompt: `What was the full timestamp associated with the last SQL injection attempt?`
+`What was the full timestamp associated with the last SQL injection attempt?`
 
 Back to our filtered list, the last entry I saw attempting SQL Injection was: `2024-05-01 20:26:14 - 192.0.2.154 ==> PROXY-XYZ [FW-ACCEPT] [RULE-108] - - [2024-05-01 20:26:14 +0000] "POST /smartmeter/WATT/login?username=&password= OR 1=1 -- HTTP/2" 404 4452 "MeterLink Connect" "User-Agent: MidnightAsterProbe/3.1" SNORT-ALERT: [SID:1000162; RULE: SQL Injection Attempt on SmartMeter WATT Login]`
 
 It's timestamp was **2024-05-01 20:26:14**.
 
-### Part Four
-
-Prompt:
+Part Four:
 
 ```text
 Identify the IP address that attempted to access sensitive system files through path traversal that did not have a snort rule triggered.
@@ -175,7 +157,7 @@ Sounds like we should dump the process. I booted up the VM and started to invest
 
 First I ran the `windows.info.Info` plugin, which didn't really wow me with anything useful. I then ran `windows.psscan.PsScan` to find any running/hidden processes.
 
-![[cfc-cth-24-paste-2024-05-12-4.png]]
+![Enbry Process](cfc-cth-24-paste-2024-05-12-4.png)
 
 The only process which really jumped out to me was `enbry.exe` which had a PID of `7592`. This isn't a standard windows process, and I wasn't able to find any information about it online, surprise surprise this was our malware.
 
@@ -251,29 +233,29 @@ We see a two users logging in from the same address, a handful of authentication
 
 An innocent user had their data stolen. Answer the following questions by analyzing the attached pcap.
 
-### Part One
+Part One:
 
-Prompt: `What port was exploited?`
+`What port was exploited?`
 
 Investigating the PCAP I saw some FTP traffic that appeared to be unencrypted, including a user's login.
 
-![[cfc-cth-24-paste-2024-05-13-1.png]]
+![FTP Traffic](cfc-cth-24-paste-2024-05-13-1.png)
 
 Port **21** was the flag.
 
-### Part Two
+Part Two:
 
-Prompt: `What protocol was used to gain initial entry?`
+`What protocol was used to gain initial entry?`
 
 As previously discovered, **FTP**.
 
-### Part Three
+Part Three:
 
-Prompt: `What was the phrase the exploiter found?`
+`What was the phrase the exploiter found?`
 
 I found a TCP stream with what appears to be the attacker's shell gained after exploiting FTP.
 
-![[cfc-cth-24-paste-2024-05-13-2.png]]
+![Shell Transcript](cfc-cth-24-paste-2024-05-13-2.png)
 
 Here we can see them cat `flag.txt` with the flag `f0undm3`
 
@@ -283,9 +265,9 @@ We're provided with 3 documents to evaluate an incident report from Vivara Resea
 
 ![[cfc-cth-24-paste-2024-05-13-3.png]]
 
-### Part One
+Part One:
 
-Prompt: `Which NCISS functional impact category best fits the incident described in Vivara_TPS.zip?`
+`Which NCISS functional impact category best fits the incident described in Vivara_TPS.zip?`
 
 The functional impact categories are described as follows:
 
@@ -298,13 +280,13 @@ The functional impact categories are described as follows:
 7) Significant Impact to Critical Services
 8) Denial of Critical Services /Loss of Control
 
-![[cfc-cth-24-paste-2024-05-13-4.png]]
+![Incident Summary](cfc-cth-24-paste-2024-05-13-4.png)
 
 According to the incident report, this would best align with option 6, **Denial of Non-Critical Services**, the server experienced 49 hours of downtime although it didn't maintain any business critical function.
 
-### Part Two
+Part Two:
 
-Prompt: `Which NCISS informational impact category best fits the incident described in Vivara_TPS.zip?`
+`Which NCISS informational impact category best fits the incident described in Vivara_TPS.zip?`
 
 The impact categories are described as follows:
 
@@ -319,9 +301,9 @@ The impact categories are described as follows:
 
 Option 5, **Destruction of Non-Critical System**, seems to fit this incident the best. The attacker deployed ransomware which rendered the non-critical system unusable.
 
-### Part Three
+Part Three:
 
-Prompt: `Which NCISS attribute for location of observed activity best fits the incident described in Vivara_TPS.zip?`
+`Which NCISS attribute for location of observed activity best fits the incident described in Vivara_TPS.zip?`
 
 The location of observed activity attributes are described as follows:
 
@@ -336,15 +318,15 @@ The location of observed activity attributes are described as follows:
 
 This incident occurred on the **Business  Network**, the server was a confidential internal resource which didn't interact with critical systems.
 
-### Part Four
+Part Four:
 
-Prompt: `Which part of the CIA triad was most impacted by the incident described in Vivara_TPS.zip?`
+`Which part of the CIA triad was most impacted by the incident described in Vivara_TPS.zip?`
 
 **Availability**, ransomware was deployed, suprise surprise.
 
-### Part Five
+Part Five:
 
-Prompt: `In minutes, how much time passed between occurrence and detection during the incident described in Vivara_TPS.zip?`
+`In minutes, how much time passed between occurrence and detection during the incident described in Vivara_TPS.zip?`
 
 The report states that the incident occured at `1715128980`, and was detected at `1715134320`, so **89 minutes** elapsed.
 
@@ -352,23 +334,21 @@ The report states that the incident occured at `1715128980`, and was detected at
 
 We're presented with a word document about the moon, notably there's letters highlighted red, and a lot of gaps in the text.
 
-![[cfc-cth-24-paste-2024-05-13-5.png]]
+![Moon Article](cfc-cth-24-paste-2024-05-13-5.png)
 
-### Part One
+Part One:
 
-Prompt: `Decode the secret Message, the secret message is all the red letters in the text.`
+`Decode the secret Message, the secret message is all the red letters in the text.`
 
 Never would've guessed. Taking all the red characters gives us `I3Z0h3Q0pwbt`.
 
-### Part Two
+Part Two:
 
-Prompt: `The secret word to decrypt the message`
+`The secret word to decrypt the message`
 
 I shot from the hip here and correctly guessed **moon**, it was either that or lunar.
 
-### Part Three
-
-Prompt:
+Part Three:
 
 ```text
 Highlight all the text to find the hidden code within the article. Copy this into a python compiler and enter the message and secret word. The output will be the flag
@@ -408,27 +388,27 @@ Prompt: `Solve the cryptopuzzle for full points`
 
 We're initially presented with a fun PDF, and a second PDF which is password protected.
 
-![[cfc-cth-24-paste-2024-05-13-6.png]]
+![Futurum](cfc-cth-24-paste-2024-05-13-6.png)
 
 The two areas of note are the glypss on the monitor, and encoded text on the table.
 
-![[cfc-cth-24-paste-2024-05-13-7.png]]
+![Glyphs](cfc-cth-24-paste-2024-05-13-7.png)
 
 I wasn't familiar with this alphabet, but I hunted around online and eventually found a key on [deciphersxyz](https://deciphersxyz.wordpress.com/ciphers/):
 
-![[cfc-cth-24-paste-2024-05-13-8.png]]
+![Glyph Alphabet](cfc-cth-24-paste-2024-05-13-8.png)
 
 The text decodes to: `Decode the cipher to access the next puzzle`. Huge time waster with how long it took me to find the key 😭.
 
-![[cfc-cth-24-paste-2024-05-13-9.png]]
+![Base32 Text](cfc-cth-24-paste-2024-05-13-9.png)
 
 This was encoded with base32, and decodes to `Astraeus`, which was the key to the second PDF.
 
-![[cfc-cth-24-paste-2024-05-13-10.png]]
+![Astraeus](cfc-cth-24-paste-2024-05-13-10.png)
 
 If you look closely at the rays of the sun, there's morse code to transcribe, yippee!
 
-![[cfc-cth-24-paste-2024-05-13-11.png]]
+![Morse](cfc-cth-24-paste-2024-05-13-11.png)
 
 This took me a while, but I got the following phrase which was the flag:
 
@@ -443,106 +423,143 @@ This is an excerpt from *The Road Not Taken*, by Robert Frost.
 ### General Trivia
 
 1. Which of the following is a technique used in post-exploitation to maintain persistent access to a compromised system without relying on traditional backdoors or implants?
- a. Kernel patching
- b. Rootkit installation
- c. **Scheduled task creation**
- d. DLL hijacking
+
+* Kernel patching
+* Rootkit installation
+* **Scheduled task creation**
+* DLL hijacking
+
 2. What is the primary purpose of a bind shell payload in a penetration testing scenario?
- a. To establish a reverse connection from the attacker's machine to the target system.
- b. To execute arbitrary commands on the target system and return the results to the attacker.
- c. **To open a network port on the target system and listen for incoming connections from the attacker.**
- d. To encrypt communication between the attacker and the target system to evade detection.
+
+* To establish a reverse connection from the attacker's machine to the target system.
+* To execute arbitrary commands on the target system and return the results to the attacker.
+* **To open a network port on the target system and listen for incoming connections from the attacker.**
+* To encrypt communication between the attacker and the target system to evade detection.
 
 3. Explain the difference between symmetric and asymmetric encryption
- a. Symmetric encryption uses two different keys for encryption and decryption, while asymmetric encryption uses the same key for both processes.
- b. Symmetric encryption is faster than asymmetric encryption, while asymmetric encryption offers better security.
- c. Symmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption, while asymmetric encryption uses only one key for both processes.
- **d. Symmetric encryption uses a single key for both encryption and decryption, while asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption.**
+
+* Symmetric encryption uses two different keys for encryption and decryption, while asymmetric encryption uses the same key for both processes.
+ - Symmetric encryption is faster than asymmetric encryption, while asymmetric encryption offers better security.
+ - Symmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption, while asymmetric encryption uses only one key for both processes.
+ - **Symmetric encryption uses a single key for both encryption and decryption, while asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption.**
+ 
 4. Which of the following is a technique often utilized by attackers to evade detection by security tools and defenders, involving the encryption of malicious payloads to bypass signature-based detection mechanisms?
- a. Cross-site scripting (XSS)
- b. DNS tunneling
- c. Data exfiltration
- **d. Payload obfuscation**
+
+ - Cross-site scripting (XSS)
+ - DNS tunneling
+ - Data exfiltration
+ - **Payload obfuscation**
+ 
 5. In a penetration testing scenario, which of the following methods is commonly used to escalate privileges on a compromised system when traditional methods fail?
- a. Reverse engineering
- b. Fuzzing
- **c. Kernel exploitation**
- d. DLL injection
+
+ - Reverse engineering
+ - Fuzzing
+ - **Kernel exploitation**
+ - DLL injection
+ 
 6. Which of the following is a technique used in a buffer overflow attack to redirect the program's execution flow to malicious code injected by the attacker?
- a. Code obfuscation
- b. Integer overflow
- **c. Return-oriented programming (ROP)**
- d. Cross-site scripting (XSS)
+
+ - Code obfuscation
+ - Integer overflow
+ - **Return-oriented programming (ROP)**
+ - Cross-site scripting (XSS)
+ 
 7. During a penetration test, the tester discovers an outdated FTP server running on the target network. Which of the following techniques would be MOST effective for exploiting this vulnerability?
- **a. Directory traversal attack**
- b. Cross-site scripting (XSS)
- c. SQL injection
- d. Buffer overflow exploit
+
+ - **Directory traversal attack**
+ - Cross-site scripting (XSS)
+ - SQL injection
+ - Buffer overflow exploit
+ 
 8. In a penetration testing scenario, what is the primary purpose of using a reverse shell payload?
- **a. To establish a connection from the attacker's machine to the victim's machine.**
- b. To encrypt data transmitted between the attacker and the victim.
- c. To exploit a vulnerability in a web application.
- d. To perform a denial-of-service (DoS) attack on the target network.
+
+ - **To establish a connection from the attacker's machine to the victim's machine.**
+ - To encrypt data transmitted between the attacker and the victim.
+ - To exploit a vulnerability in a web application.
+ - To perform a denial-of-service (DoS) attack on the target network.
+ 
 9. In a penetration testing scenario, what is the primary objective of post-exploitation activities after gaining initial access to a target system?
- a. Deleting system logs to cover tracks
- b. Extracting sensitive data from the compromised system
- **c. Installing backdoors for persistent access**
- d. Patching vulnerabilities to secure the system
+
+ - Deleting system logs to cover tracks
+ - Extracting sensitive data from the compromised system
+ - **Installing backdoors for persistent access**
+ - Patching vulnerabilities to secure the system
+ 
 10. In a penetration test, which of the following techniques would be most effective for escalating privileges after gaining initial access to a target system?
- a. Conducting a brute-force attack against system services.
- b. Exploiting misconfigured network shares to gain access to sensitive files.
- c. Leveraging a zero-day vulnerability to execute arbitrary code.
- **d. Exploiting a known vulnerability to escalate privileges via a privilege escalation exploit.**
+
+ - Conducting a brute-force attack against system services.
+ - Exploiting misconfigured network shares to gain access to sensitive files.
+ - Leveraging a zero-day vulnerability to execute arbitrary code.
+ - **Exploiting a known vulnerability to escalate privileges via a privilege escalation exploit.**
+
 11. Which of the following is a key component of a firewall?
- a. Intrusion Detection System (IDS)
- b. Anti-virus software
- c. Router
- **d. Access Control List (ACL)**
+
+ - Intrusion Detection System (IDS)
+ - Anti-virus software
+ - Router
+ - **Access Control List (ACL)**
+
 12. What is the main advantage of using asymmetric encryption over symmetric encryption?
- a. Faster encryption and decryption speed
- b. Requires only one key for both encryption and decryption
- **c. Provides better security for key distribution**
- d. Less complex implementation
+
+ - Faster encryption and decryption speed
+ - Requires only one key for both encryption and decryption
+ - **Provides better security for key distribution**
+ - Less complex implementation
+ 
 13. What type of attack attempts to deceive users into visiting malicious websites by redirecting them from legitimate websites?
- a. Man-in-the-Middle (MitM)
- b. Cross-Site Scripting (XSS)
- **c. Phishing**
- d. SQL Injection
+
+ - Man-in-the-Middle (MitM)
+ - Cross-Site Scripting (XSS)
+ - **Phishing**
+ - SQL Injection
+ 
 14. What is the purpose of a VPN (Virtual Private Network)?
- a. To hide IP addresses
- **b. To secure network traffic over public networks**
- c. To encrypt files on a local computer
- d. To prevent malware infections
+
+ - To hide IP addresses
+ - **To secure network traffic over public networks**
+ - To encrypt files on a local computer
+ - To prevent malware infections
+ 
 15. Which of the following is NOT a common authentication factor?
- a. Password
- b. Biometrics
- c. Security Token
- **d. Public Key**
+
+ - Password
+ - Biometrics
+ - Security Token
+ - **Public Key**
 
 ### Energy Trivia
 
 1. The Department of Energy supports advancements in sustainable transportation. Which of the following is NOT a focus area?
- a. Electric vehicle (EV) infrastructure
- b. Biofuel production
- c. Hydrogen fuel cells
- **d. Lead-acid battery research for EVs**
+
+ - Electric vehicle (EV) infrastructure
+ - Biofuel production
+ - Hydrogen fuel cells
+ - **Lead-acid battery research for EVs**
+ 
 2. Which U.S. agency launched the "Building a Better Grid initiative to expand and modernize the nation's electric grid?
- a. Environmental Protection Agency (EPA)
- **b. Department of Energy (DOE)**
- c. Federal Energy Regulatory Commission (FERC)
- d. Department of Defense (DOD)
+
+ - Environmental Protection Agency (EPA)
+ - **Department of Energy (DOE)**
+ - Federal Energy Regulatory Commission (FERC)
+ - Department of Defense (DOD)
+ 
 3. Which innovative technology was the Department of Energy exploring to enhance grid resilience against cyber-attacks in 2023 according to their GMI calls?
- a. Blockchain technology
- **b. Quantum encryption communications**
- c. AI threat detection systems
- d. Satellite grid monitoring
-4. What should be the primary objective of a risk management strategy? CISM
- a. Determine the organization's risk appetite.
- b. Identify credible risks and transfer them to an external party.
- **c. Identify credible risks and reduce them to an acceptable level.**
- d. Eliminate credible risks.
+
+ - Blockchain technology
+ - **Quantum encryption communications**
+ - AI threat detection systems
+ - Satellite grid monitoring
+ 
+4. What should be the primary objective of a risk management strategy?
+
+ - Determine the organization's risk appetite.
+ - Identify credible risks and transfer them to an external party.
+ - **Identify credible risks and reduce them to an acceptable level.**
+ - Eliminate credible risks.
+ 
 5. Based on the 2023 U.S. Energy Information Administration, this was the leading renewable energy source.
- a. Solar
- b. Hydropower
- **c. Wind**
- d. Geothermal
+
+ - Solar
+ - Hydropower
+ - **Wind**
+ - Geothermal
