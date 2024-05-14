@@ -8,7 +8,9 @@ tags:
 imageNameKey: cfc-cth-24
 ---
 
-I recently participated in the DOE's [Cyberforce Conquer the Hill Competition](https://cyberforce.energy.gov/conquer-the-hill/), a jeopardy style CTF, placing 2nd out of TODO players. This was my first time participating in one of the individual Cyberforce games, but I've played in the larger event a handful of times and thoroughly enjoyed it. I've detailed most of the challenges I was able to get through, because this competition was only 4 hours long I didn't have as much time as I'd have liked to hit the reverse engineering and harder challenges.
+I recently participated in the DOE's [Cyberforce Conquer the Hill Competition](https://cyberforce.energy.gov/conquer-the-hill/), a jeopardy style CTF, placing 2nd out of 77 players. This was my first time participating in one of the individual Cyberforce games, but I've played in the larger event a handful of times and thoroughly enjoyed it.
+
+I've detailed most of the challenges I was able to get through, because this competition was only 4 hours long I didn't have as much time as I'd have liked to hit the reverse engineering and harder challenges.
 
 ![Conquer the Hill Logo](featured.png)
 
@@ -20,11 +22,10 @@ This challenge provided a large SQL Database representing a user's browser histo
 
 Part One:
 
-```text
-One of your coworkers just got phished and downloaded a rather suspicious file and you’ve got the browser history file available. You need to look for the answers to some questions as they’re out on vacation for the next week.
+`One of your coworkers just got phished and downloaded a rather suspicious file and you’ve got the browser history file available. You need to look for the answers to some questions as they’re out on vacation for the next week.`
 
-Look for a potentially malicious file they likely downloaded. Provide the tab URL from where the file was downloaded from.
-```
+`Look for a potentially malicious file they likely downloaded. Provide the tab URL from where the file was downloaded from.`
+
 
 I started by investigating the downloads folder and found six entries:
 
@@ -34,9 +35,8 @@ I started by investigating the downloads folder and found six entries:
 
 Part Two:
 
-```text
-While you’re looking at downloads, it looks like there was an image of a quote downloaded. What is that quote?
-```
+`While you’re looking at downloads, it looks like there was an image of a quote downloaded. What is that quote?`
+
 
 Looks like we want the contents of `simonedebeauvoir1-2x.jpg`, the downloaded url just links to [BrainyQuote](https://www.brainyquote.com/quote_of_the_day)'s quote of the day for May 2nd. I searched on the site for Simone De Beauvoir, and downloaded the latest quote with an image, "Change your life today. Don't gamble on the future, act now, without delay."
 
@@ -44,25 +44,22 @@ Looks like we want the contents of `simonedebeauvoir1-2x.jpg`, the downloaded ur
 
 Part Three:
 
-```text
-They were trying to book flights. What US state is the airport they are flying out of located in?
-```
+`They were trying to book flights. What US state is the airport they are flying out of located in?`
+
 
 Now we need to switch to look at the urls table to see where the user was browsing. I found the following link: `https://www.southwest.com/air/booking/select-depart.html?int=HOMEQBOMAIR&adultPassengersCount=1&departureDate=2024-05-18&destinationAirportCode=MDW&fareType=USD&originationAirportCode=MHT&passengerType=ADULT&promoCode=&returnDate=2024-05-31&tripType=roundtrip&from=MHT&to=MDW&adultsCount=1&departureTimeOfDay=ALL_DAY&reset=true&returnTimeOfDay=ALL_DAY`, which indicated that they were looking at the MHT Airport out of **New Hampshire**.
 
 Part Four:
 
-```text
-In relation to travel, they were looking up weather reports for multiple areas. Provide the name of the town that they visited a URL for outside of google.com or bing.com.
-```
+`In relation to travel, they were looking up weather reports for multiple areas. Provide the name of the town that they visited a URL for outside of google.com or bing.com.`
+
 
 Still in the urls table, this visited link indicates that they were looking up the weather in **Shelburne**: `https://weather.com/weather/tenday/l/Shelburne+VT?canonicalCityId=4f34aa1d907e86d210ffae254df28b73fcad23268a5874dd5f07367554a21625`.
 
 Part Five:
 
-```text
-One of the GitHub repositories they were looking at recently had a massive issue in early April. What is the corresponding CVE for that vulnerability?
-```
+`One of the GitHub repositories they were looking at recently had a massive issue in early April. What is the corresponding CVE for that vulnerability?`
+
 
 In the same table, I found the following GitHub Repos:
 
@@ -75,17 +72,15 @@ The recent xzutils backdoor was a fairly big story, and it's CVE is **CVE-2024-3
 
 Part Six:
 
-```text
-What was the visit duration value associated with the URL that has the corresponding title eCFR :: 10 CFR Chapter III – Department of Energy"?
-```
+`What was the visit duration value associated with the URL that has the corresponding title eCFR :: 10 CFR Chapter III – Department of Energy"?`
+
 
 First I investigated the urls table and found that url id 342 linked to <https://www.ecfr.gov/current/title-10/chapter-III>. I was then able to correlate this with the visits table which had the `visit_duration` value we were looking for, id 342 had a duration of `35810787`.
 
 Part Seven:
 
-```text
-At one point they downloaded a picture of a famous painting. However, they browsed pages for at least 2 famous paintings. What was the last name of artist that painted the picture which was NOT downloaded?
-```
+`At one point they downloaded a picture of a famous painting. However, they browsed pages for at least 2 famous paintings. What was the last name of artist that painted the picture which was NOT downloaded?`
+
 
 In downloads we saw `The Artist's Garden at Vétheuil`, by Claude Monet. The only other painting the user browsed to (from the urls table), is `Ground Swell` by Edward **Hopper**.
 
@@ -263,7 +258,7 @@ Here we can see them cat `flag.txt` with the flag `f0undm3`
 
 We're provided with 3 documents to evaluate an incident report from Vivara Research Solutions according to the [NCISS System](https://www.cisa.gov/news-events/news/cisa-national-cyber-incident-scoring-system-nciss) provided by CISA.
 
-![[cfc-cth-24-paste-2024-05-13-3.png]]
+![Incident Summary](cfc-cth-24-paste-2024-05-13-3.png)
 
 Part One:
 
